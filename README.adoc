@@ -1,0 +1,3 @@
+= (Future) Asciidoctor Documentation Site
+
+This repository hosts the Antora playbook project for generating the (future) Asciidoctor documentation site.
