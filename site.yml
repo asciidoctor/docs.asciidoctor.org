@@ -1,0 +1,50 @@
+site:
+  title: The Docs @ Asciidoctor
+  url: https://docs.asciidoctor.org
+  start_page: asciidoctor::index.adoc
+asciidoc:
+  attributes:
+    experimental: ''
+    example-caption: ~
+    hide-uri-scheme: ''
+    idprefix: ''
+    idseparator: '-'
+    linkattrs: ''
+    source-language: asciidoc
+    table-caption: ~
+    url-project: https://asciidoctor.org
+    url-org: https://github.com/asciidoctor
+    url-exten-lab: https://github.com/asciidoctor/asciidoctor-extensions-lab
+    url-rubygem: https://rubygems.org/gems/asciidoctor
+    url-tilt: https://github.com/rtomayko/tilt
+    url-foundation: https://foundation.zurb.com
+    url-jruby: https://jruby.org
+    url-asciimath: https://docs.mathjax.org/en/latest/asciimath.html
+    url-latexmath: https://docs.mathjax.org/en/latest/tex.html
+    url-mathjax: https://www.mathjax.org
+    url-mathjax-docs: https://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+    url-coderay: http://coderay.rubychan.de/
+    url-coderay-gem: https://rubygems.org/gems/coderay
+    url-highlightjs: https://highlightjs.org/
+    url-highlightjs-lang: https://highlightjs.org/download/
+    url-prettify: https://code.google.com/p/google-code-prettify
+    url-pygments: http://pygments.org
+    url-pygments-lang: http://pygments.org/languages/
+    url-pygments-gem: https://rubygems.org/gems/pygments.rb
+    url-python: https://www.python.org
+    url-rouge: http://rouge.jneen.net
+content:
+  sources:
+  - url: https://github.com/asciidoctor/asciidoctor.git
+    branches: v1.5.7-docs
+    start_path: docs
+  - url: https://github.com/asciidoctor/asciidoctor.js.git
+    branches: antora
+    start_path: docs
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+#  supplemental_files: ./supplemental-ui
+output:
+  dir: ./public
