@@ -1,7 +1,23 @@
+runtime:
+  cache_dir: ./.cache/antora
 site:
   title: The Docs @ Asciidoctor
   url: https://docs.asciidoctor.org
   start_page: asciidoctor::index.adoc
+content:
+  sources:
+  - url: https://github.com/asciidoctor/asciidoctor.git
+    branches: v1.5.7-docs
+    start_path: docs/asciidoc
+  - url: https://github.com/asciidoctor/asciidoctor.git
+    branches: v1.5.7-docs
+    start_path: docs/asciidoctor
+  - url: https://github.com/asciidoctor/asciidoctor.git
+    branches: v1.5.7-docs
+    start_path: docs/extensions
+  - url: https://github.com/asciidoctor/asciidoctor.js.git
+    branches: antora
+    start_path: docs
 asciidoc:
   attributes:
     experimental: ''
@@ -33,20 +49,6 @@ asciidoc:
     url-pygments-gem: https://rubygems.org/gems/pygments.rb
     url-python: https://www.python.org
     url-rouge: http://rouge.jneen.net
-content:
-  sources:
-  - url: https://github.com/asciidoctor/asciidoctor.git
-    branches: v1.5.7-docs
-    start_path: docs/asciidoctor
-  - url: https://github.com/asciidoctor/asciidoctor.git
-    branches: v1.5.7-docs
-    start_path: docs/asciidoc
-  - url: https://github.com/asciidoctor/asciidoctor.js.git
-    branches: antora
-    start_path: docs
-  - url: https://github.com/asciidoctor/asciidoctor.git
-    branches: v1.5.7-docs
-    start_path: docs/extensions
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
