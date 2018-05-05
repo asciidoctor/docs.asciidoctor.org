@@ -42,7 +42,7 @@ content:
     branches: v1.5.7-docs
     start_path: docs/asciidoc
   - url: https://github.com/asciidoctor/asciidoctor.js.git
-    branches: antora
+    branches: master
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor.git
     branches: v1.5.7-docs
