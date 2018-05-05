@@ -6,14 +6,14 @@ site:
   start_page: asciidoctor::index.adoc
 content:
   sources:
-  - url: https://github.com/asciidoctor/asciidoctor.git
-    branches: v1.5.7-docs
+  - url: &asciidoctor-url https://github.com/asciidoctor/asciidoctor.git
+    branches: &asciidoctor-branches v1.5.7-docs
     start_path: docs/asciidoc
-  - url: https://github.com/asciidoctor/asciidoctor.git
-    branches: v1.5.7-docs
+  - url: *asciidoctor-url
+    branches: *asciidoctor-branches
     start_path: docs/asciidoctor
-  - url: https://github.com/asciidoctor/asciidoctor.git
-    branches: v1.5.7-docs
+  - url: *asciidoctor-url
+    branches: *asciidoctor-branches
     start_path: docs/extensions
   - url: https://github.com/asciidoctor/asciidoctor.js.git
     branches: antora
