@@ -16,7 +16,7 @@ content:
     branches: *asciidoctor-branches
     start_path: docs/extensions
   - url: https://github.com/asciidoctor/asciidoctor.js.git
-    branches: antora
+    branches: master
     start_path: docs
 asciidoc:
   attributes:
