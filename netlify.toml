@@ -1,7 +1,7 @@
 [build]
   base = "netlify"
   publish = "public"
-  command = "node_modules/.bin/antora --html-url-extension-style=indexify --pull ../site.yml"
+  command = "node_modules/.bin/antora --html-url-extension-style=default --pull ../site.yml"
 
 [build.environment]
   NODE_VERSION = "8"
@@ -14,9 +14,21 @@
 #  GOOGLE_ANALYTICS_KEY = "..."
 
 [context.deploy-preview]
-  command = "URL=$DEPLOY_PRIME_URL node_modules/.bin/antora --html-url-extension-style=indexify --pull ../site.yml"
+  command = "URL=$DEPLOY_PRIME_URL node_modules/.bin/antora --html-url-extension-style=default --redirect-facility=netlify --pull ../site.yml"
 
 [[headers]]
   for = "/_/font/*"
   [headers.values]
     Cache-Control = "public,max-age=604800"
+
+[[redirects]]
+  from = "/"
+  to = "/asciidoctor/1.5.7/index.html"
+
+[[redirects]]
+  from = "/asciidoc/1.5.7/table/index.html"
+  to = "/asciidoc/1.5.7/tables/index.html"
+
+[[redirects]]
+  from = "/asciidoc/1.5.7/table/"
+  to = "/asciidoc/1.5.7/tables/index.html"
