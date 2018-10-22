@@ -1,0 +1,25 @@
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}">{{site.title}}</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/asciidoctor/asciidoctor">
+          Repository
+        </a>
+        <a class="navbar-item" href="https://github.com/asciidoctor/asciidoctor/issues">
+          Issue Tracker
+        </a>
+        <a class="navbar-item" href="https://gitter.im/asciidoctor/asciidoctor">
+          Chat
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
