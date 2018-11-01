@@ -12,9 +12,6 @@ content:
   - url: *asciidoctor-url
     branches: *asciidoctor-branches
     start_path: docs/asciidoctor
-  - url: *asciidoctor-url
-    branches: *asciidoctor-branches
-    start_path: docs/extensions
   - url: https://github.com/asciidoctor/asciidoctor.js.git
     branches: master
     start_path: docs
