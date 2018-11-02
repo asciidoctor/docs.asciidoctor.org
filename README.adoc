@@ -1,3 +1,25 @@
 = (Future) Asciidoctor Documentation Site
 
 This repository hosts the Antora playbook project for generating the (future) Asciidoctor documentation site.
+
+== How to Upgrade Antora
+
+This section provides instructions for how to upgrade Antora.
+
+. Set the version of Antora in netlify/package.json.
+This sets up the installation of Antora in the Netlify build.
+Both `@antora/cli` and `@antora/site-generator-default` should have the same version.
+The version should be an exact number so we have control over when it gets upgraded.
+
+. Switch to the netlify directory and run:
+
+ $ yarn
+
+. If there are any new flags in Antora we want to use, update the `antora` command in netlify.toml.
+Otherwise, leave this file alone.
+
+. Commit the changes to the master branch.
+
+. FUTURE: Once this README has install instructions for writers, update the recommended version number of Antora.
+
+Netlify will take it from there.
