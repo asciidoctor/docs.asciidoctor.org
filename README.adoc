@@ -2,6 +2,9 @@
 
 This repository hosts the Antora playbook project for generating the (future) Asciidoctor documentation site.
 
+You can find a preview of the site at https://asciidoctor-docs.netlify.com.
+Keep in mind this is only a temporary URL!
+
 == How to Upgrade Antora
 
 This section provides instructions for how to upgrade Antora.
