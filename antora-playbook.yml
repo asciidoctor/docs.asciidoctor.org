@@ -48,8 +48,13 @@ asciidoc:
     url-rouge: http://rouge.jneen.net
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
-    snapshot: true
-  supplemental_files: ./antora/supplemental-ui
+    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/v2/ui-bundle.zip
+  supplemental_files:
+  - path: robots.txt
+    contents: |
+      User-agent: *
+  - path: ui.yml
+    contents: |
+      static_files: [robots.txt]
 output:
   dir: ./public
