@@ -4,6 +4,5 @@ git:
 language: minimal
 jobs:
   include:
-  #- stage: cron
-  - if: env(TRAVIS_EVENT_TYPE) = cron
+  - if: type = cron
     script: curl -X POST -d '' -s $NETLIFY_BUILD_HOOK
