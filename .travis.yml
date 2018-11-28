@@ -5,5 +5,5 @@ language: minimal
 jobs:
   include:
   #- stage: cron
-  #- if: env(TRAVIS_EVENT_TYPE) = cron OR env(TRAVIS_EVENT_TYPE) = api
-  - script: curl -X POST -d '' -s $NETLIFY_BUILD_HOOK
+  - if: env(TRAVIS_EVENT_TYPE) = cron
+    script: curl -X POST -d '' -s $NETLIFY_BUILD_HOOK
