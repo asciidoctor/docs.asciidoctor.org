@@ -1,11 +1,10 @@
 [build]
 base = "netlify"
 publish = "public"
-command = "node_modules/.bin/antora --html-url-extension-style=indexify --pull ../antora-playbook.yml"
+command = "sed -i 's/depth: 1/depth: undefined/g' node_modules/@antora/content-aggregator/lib/aggregate-content.js && node_modules/.bin/antora --html-url-extension-style=indexify --pull ../antora-playbook.yml"
 
 [build.environment]
-NODE_VERSION = "8"
-BUILD_ONLY = "true"
+NODE_VERSION = "10"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 
 #[context.production.environment]
@@ -14,7 +13,7 @@ ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 #GOOGLE_ANALYTICS_KEY = "..."
 
 [context.deploy-preview]
-command = "node_modules/.bin/antora --html-url-extension-style=indexify --pull --url $DEPLOY_PRIME_URL ../antora-playbook.yml"
+command = "sed -i 's/depth: 1/depth: undefined/g' node_modules/@antora/content-aggregator/lib/aggregate-content.js && node_modules/.bin/antora --html-url-extension-style=indexify --pull --url $DEPLOY_PRIME_URL ../antora-playbook.yml"
 
 [[headers]]
 for = "/_/font/*"
