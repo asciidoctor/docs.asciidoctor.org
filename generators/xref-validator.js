@@ -41,7 +41,7 @@ module.exports = async (args, env) => {
           // Q: should we report the while xref or just the target?
           brokenXrefs.add(pageSpec)
         }
-        docsWithBrokenXrefs.set(doc, [ ...brokenXrefs ])
+        if (brokenXrefs.size) docsWithBrokenXrefs.set(doc, [ ...brokenXrefs ])
       }
     })
   unsilenceStderr()
