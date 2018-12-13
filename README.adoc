@@ -3,54 +3,86 @@
 :hide-uri-scheme:
 ifdef::env-github[:badges:]
 // Project URIs:
-:uri-project: https://asciidoctor.org
-//:uri-site: https://docs.asciidoctor.org
-:uri-site: https://asciidoctor-docs.netlify.com
-:uri-org: https://github.com/asciidoctor
-:uri-site-ui: https://github.com/asciidoctor/docs.asciidoctor.org-ui
+:url-project: https://asciidoctor.org
+//:url-site: https://docs.asciidoctor.org
+:url-site: https://asciidoctor-docs.netlify.com
+:url-org: https://github.com/asciidoctor
+:url-site-ui: https://github.com/asciidoctor/docs.asciidoctor.org-ui
 // External URIs:
-:uri-antora-install: https://docs.antora.org/antora/1.1/install/install-antora/
-:uri-letsencrypt: https://letsencrypt.org
-:uri-netlify: https://www.netlify.com
-:uri-netlify-deploys: https://app.netlify.com/sites/asciidoctor-docs/deploys
+:url-antora: https://antora.org
+:url-antora-install: https://docs.antora.org/antora/1.1/install/install-antora/
+:url-letsencrypt: https://letsencrypt.org
+:url-netlify: https://www.netlify.com
+:url-netlify-deploys: https://app.netlify.com/sites/asciidoctor-docs/deploys
 
 ifdef::badges[]
 image:https://img.shields.io/travis/asciidoctor/docs.asciidoctor.org/master.svg[CI status,88,20,link=https://travis-ci.org/asciidoctor/docs.asciidoctor.org]
-image:https://www.netlify.com/img/global/badges/netlify-dark.svg[Deploy Status,45,20,link={uri-netlify-deploys}]
+image:https://www.netlify.com/img/global/badges/netlify-dark.svg[Deploy Status,45,20,link={url-netlify-deploys}]
 endif::[]
 
-This repository contains the playbook project for the Asciidoctor documentation site published at {uri-site}.
+This repository contains an Antora playbook project for building the (future) documentation site for the Asciidoctor ecosystem.
+//published at {url-site}.
+
+You can find a preview of the site at {url-site}.
+*Keep in mind this URL is only temporary.*
 
 == Documentation Structure
 
-The documentation components are pulled from various source repositories in the https://github.com/asciidoctor[Asciidoctor organization on GitHub].
-The UI for the site is hosted in a separate repository, docs.asciidoctor.org-ui.
+The documentation site is built using {url-antora}[Antora].
+The content is pulled from various source repositories in the https://github.com/asciidoctor[Asciidoctor organization on GitHub].
+These sources are defined in the Antora playbook file, [.path]_antora-playbook.yml_.
+Each content source points to a folder in one or more branches that is structured as a documentation component, which Antora consumes.
+
+The UI for the site is hosted in a separate repository, {url-site-ui}[docs.asciidoctor.org-ui].
 
 == Quickstart
 
-To generate the Asciidoctor Docs site, you first need to {uri-antora-install}[install Antora].
+To generate the Asciidoctor Docs site, you first need to install {url-antora}[Antora].
+Follow the {url-antora-install}[installation instructions] in the Antora documentation.
+We recommend installing it globally, if possible.
+
 Once Antora is installed, run the `antora` command on the playbook file hosted in this repository.
 
  $ antora antora-playbook.yml
 
-The site will be generated into [.path]_public/_.
+This command will generate a site into [.path]_public/_.
 Navigate to [.path]_public/index.html_ in your browser to view the site offline.
+
+== How to Upgrade Antora in CI
+
+This section provides instructions for how to upgrade Antora used in the Netlify CI build.
+
+. Set the version of the Antora packages `@antora/cli` and `@antora/site-generator-default` in [.path]_netlify/package.json_.
+Both packages should be set to the same version.
+The version should be an exact number so we have control over exactly when it gets upgraded.
+
+. Switch to the netlify directory and run the following command to update [.path]_yarn.lock_:
+
+ $ yarn
+
+. If there are new options in Antora we want to take advantage of, update the `antora` command defined in [.path]_netlify.toml_.
+Otherwise, leave this file alone.
+
+. Commit the changes to the master branch.
+
+Netlify will take it from there.
 
 == Hosting
 
-This site is hosted on {uri-netlify}[Netlify].
+This site is hosted on {url-netlify}[Netlify].
 It's managed by the account info [at] this domain.
 
-Deployment is triggered via a webhook to any branch in the git repository (URL: https://api.netlify.com/hooks/gitlab, events: Push Events, Merge Requests Events).
+Deployment is triggered via a webhook to any branch in the git repository (configured as URL: \https://api.netlify.com/hooks/gitlab, events: Push Events, Merge Requests Events).
 
 The deploy job on Netlify is configured by the file [.path]_netlify.toml_.
 This configuration files defines certain environment variables that control the behavior of Yarn and Antora.
 When the job runs, it switches to the [.path]_netlify/_ directory, runs `yarn`, then invokes `antora`.
 
-The Netlify deploy logs for docs.asciidoctor.org can be viewed at {uri-netlify-deploys}.
+The Netlify deploy logs for docs.asciidoctor.org can be viewed at {url-netlify-deploys}.
 
 The site is also built nightly on Travis CI to pick up any updates to the content made during the day.
 The nightly CI job, configured in [.path]_.travis.yml_, triggers the Netlify job by pinging the $NETLIFY_BUILD_HOOK url.
+The $NETLIFY_BUILD_HOOK environment variable is defined in the Travis CI settings.
 
 == Domain Name
 
@@ -58,14 +90,14 @@ The domain name for this site is configured using the following A record:
 
  docs 3600 IN A 104.198.14.52
 
-The certificate for this site was generated by {uri-letsencrypt}[Let's Encrypt] and is shared with the certificate for asciidoctor.org.
-See the https://asciidoctor.og#dns[asciidoctor.org README] for details about how it was generated and configured.
+The certificate for this site was generated by {url-letsencrypt}[Let's Encrypt] and is shared with the certificate for asciidoctor.org.
+See the https://asciidoctor.og#dns[README for asciidoctor.org] to find details about how it was generated and configured.
 
-== TLS Certificate (https)
+== TLS Certificate (HTTPS)
 
-The TLS certificate for docs.asciidoctor.org was issued by {uri-netlify}[Netlify] using {uri-letsencrypt}[Let's Encrypt] and is automatically renewed.
+The TLS certificate for docs.asciidoctor.org was issued by {url-netlify}[Netlify] using {url-letsencrypt}[Let's Encrypt] and is renewed automatically.
 
-Verify the certificate is valid using:
+You can verify the certificate is valid using:
 
  $ curl -vI https://docs.asciidoctor.org
 
