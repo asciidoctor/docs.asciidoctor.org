@@ -2,7 +2,7 @@
   "name": "asciidoctor-docs-netlify",
   "private": true,
   "devDependencies": {
-    "@antora/cli": "2.0.0-rc.2",
-    "@antora/site-generator-default": "2.0.0-rc.2"
+    "@antora/cli": "2.0.0",
+    "@antora/site-generator-default": "2.0.0"
   }
 }
