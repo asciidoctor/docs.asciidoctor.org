@@ -1,0 +1,32 @@
+[build]
+publish = "public"
+ignore = "false"
+
+[build.environment]
+CI = "true"
+NODE_VERSION = "10"
+# WARNING: netlify-build ignores NPM_FLAGS when installing plugins, so use low-level NPM_CONFIG_ flag instead
+#NPM_FLAGS = "--no-optional"
+NPM_CONFIG_OPTIONAL = "false"
+ANTORA_CACHE_DIR = "node_modules/.cache/antora"
+
+[context.production]
+command = """\
+node_modules/.bin/antora --fetch --html-url-extension-style=indexify --redirect-facility=netlify ../antora-playbook.yml\
+"""
+
+#[context.production.environment]
+#ALGOLIA_APP_ID = "..."
+#ALGOLIA_API_KEY = "..."
+#ALGOLIA_INDEX_NAME = "asciidoctor"
+#GOOGLE_ANALYTICS_KEY = "..."
+
+[context.deploy-preview]
+command = """\
+node_modules/.bin/antora --fetch --html-url-extension-style=indexify --redirect-facility=netlify --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
+"""
+
+[[headers]]
+for = "/_/font/*"
+  [headers.values]
+  Cache-Control = "public,max-age=604800"

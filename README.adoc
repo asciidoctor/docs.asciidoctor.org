@@ -16,7 +16,6 @@ ifdef::env-github[:badges:]
 :url-netlify-deploys: https://app.netlify.com/sites/asciidoctor-docs/deploys
 
 ifdef::badges[]
-image:https://img.shields.io/travis/asciidoctor/docs.asciidoctor.org/master.svg[CI status,88,20,link=https://travis-ci.org/asciidoctor/docs.asciidoctor.org]
 image:https://www.netlify.com/img/global/badges/netlify-dark.svg[Deploy Status,45,20,link={url-netlify-deploys}]
 endif::[]
 
@@ -56,14 +55,14 @@ This section provides instructions for how to upgrade Antora used in the Netlify
 Both packages should be set to the same version.
 The version should be an exact number so we have control over exactly when it gets upgraded.
 
-. Switch to the netlify directory and run the following command to update [.path]_yarn.lock_:
+. Switch to the netlify directory and run the following command to update [.path]_package-lock.json_:
 
- $ yarn
+ $ npm i --no-optional
 
 . If there are new options in Antora we want to take advantage of, update the `antora` command defined in [.path]_netlify.toml_.
 Otherwise, leave this file alone.
 
-. Commit the changes to the master branch.
+. Commit the changes to the *main* branch.
 
 Netlify will take it from there.
 
@@ -76,7 +75,7 @@ Deployment is triggered via a webhook to any branch in the git repository (confi
 
 The deploy job on Netlify is configured by the file [.path]_netlify.toml_.
 This configuration files defines certain environment variables that control the behavior of Yarn and Antora.
-When the job runs, it switches to the [.path]_netlify/_ directory, runs `yarn`, then invokes `antora`.
+When the job runs, it switches to the [.path]_netlify/_ directory, runs `npm i --no-optional`, then invokes `antora`.
 
 The Netlify deploy logs for docs.asciidoctor.org can be viewed at {url-netlify-deploys}.
 
@@ -107,5 +106,5 @@ Netlify redirects all traffic to HTTPS automatically (i.e., it forces HTTPS).
 
 == Copyright and License
 
-Copyright (C) 2012-2018 Dan Allen, Sarah White and the individual contributors to Asciidoctor.
+Copyright (C) 2012-2020 Dan Allen, Sarah White and the individual contributors to Asciidoctor.
 Use of this software is granted under the terms of the MIT License.
