@@ -5,6 +5,8 @@ site:
   url: https://docs.asciidoctor.org
   start_page: asciidoctor::index.adoc
   robots: allow
+git:
+  ensure_git_suffix: false
 content:
   sources:
   - url: &asciidoctor-url https://github.com/graphitefriction/asciidoctor
