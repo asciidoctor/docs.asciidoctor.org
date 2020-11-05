@@ -16,7 +16,7 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor.js
     branches: master
     start_path: docs
-  - url: https://github.com/asciidoctor/asciidoctor-cli.js.git
+  - url: https://github.com/asciidoctor/asciidoctor-cli.js
     branches: master
     start_path: docs
 asciidoc:
