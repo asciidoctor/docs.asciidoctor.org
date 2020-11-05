@@ -32,17 +32,17 @@ asciidoc:
     url-tilt: https://github.com/rtomayko/tilt
     url-foundation: https://foundation.zurb.com
     url-jruby: https://jruby.org
-    url-asciimath: https://docs.mathjax.org/en/latest/asciimath.html
-    url-latexmath: https://docs.mathjax.org/en/latest/tex.html
+    url-asciimath: https://docs.mathjax.org/en/latest/input/asciimath.html
+    url-latexmath: https://docs.mathjax.org/en/latest/input/tex/index.html
     url-mathjax: https://www.mathjax.org
     url-mathjax-docs: https://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
     url-coderay: http://coderay.rubychan.de/
     url-coderay-gem: https://rubygems.org/gems/coderay
     url-highlightjs: https://highlightjs.org/
     url-highlightjs-lang: https://highlightjs.org/download/
-    url-prettify: https://code.google.com/p/google-code-prettify
-    url-pygments: http://pygments.org
-    url-pygments-lang: http://pygments.org/languages/
+    url-prettify: https://github.com/google/code-prettify
+    url-pygments: https://pygments.org
+    url-pygments-lang: https://pygments.org/languages/
     url-pygments-gem: https://rubygems.org/gems/pygments.rb
     url-python: https://www.python.org
     url-rouge: http://rouge.jneen.net
