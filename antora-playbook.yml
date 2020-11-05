@@ -23,6 +23,7 @@ content:
     start_path: docs
 asciidoc:
   attributes:
+    page-pagination: ''
     experimental: ''
     example-caption: ~
     hide-uri-scheme: ''
