@@ -28,7 +28,6 @@ asciidoc:
     hide-uri-scheme: ''
     idprefix: ''
     idseparator: '-'
-    linkattrs: ''
     source-language: asciidoc
     table-caption: ~
     url-project: https://asciidoctor.org
