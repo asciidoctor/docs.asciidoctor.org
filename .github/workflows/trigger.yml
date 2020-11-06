@@ -8,4 +8,4 @@ jobs:
     steps:
     - name: Ping Netlify Webhook
       run: |
-      curl -X POST -d '' -s ${{ secrets.NETLIFY_BUILD_HOOK }}
+        curl -X POST -d '' -s ${{ secrets.NETLIFY_BUILD_HOOK }}
