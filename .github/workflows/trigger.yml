@@ -1,11 +1,13 @@
 name: Nightly Build Trigger
 on:
   schedule:
-  - cron: '0 4 * * *'
+  - cron: '*/5 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Ping Netlify Webhook
       run: |
-        curl -X POST -d '' -s ${{ secrets.NETLIFY_BUILD_HOOK }}
+        echo ok go
+      #run: |
+      #  curl -X POST -d '' -s ${{ secrets.NETLIFY_BUILD_HOOK }}
