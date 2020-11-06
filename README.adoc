@@ -7,10 +7,10 @@ ifdef::env-github[:badges:]
 //:url-site: https://docs.asciidoctor.org
 :url-site: https://asciidoctor-docs.netlify.com
 :url-org: https://github.com/asciidoctor
-:url-site-ui: https://github.com/asciidoctor/docs.asciidoctor.org-ui
+:url-docs-ui: https://github.com/asciidoctor/asciidoctor-docs-ui
 // External URIs:
 :url-antora: https://antora.org
-:url-antora-install: https://docs.antora.org/antora/1.1/install/install-antora/
+:url-antora-install: https://docs.antora.org/antora/latest/install/install-antora/
 :url-letsencrypt: https://letsencrypt.org
 :url-netlify: https://www.netlify.com
 :url-netlify-deploys: https://app.netlify.com/sites/asciidoctor-docs/deploys
@@ -32,7 +32,7 @@ The content is pulled from various source repositories in the https://github.com
 These sources are defined in the Antora playbook file, [.path]_antora-playbook.yml_.
 Each content source points to a folder in one or more branches that is structured as a documentation component, which Antora consumes.
 
-The UI for the site is hosted in a separate repository, {url-site-ui}[docs.asciidoctor.org-ui].
+The UI for the site is hosted in a separate repository, {url-docs-ui}[asciidoctor-docs-ui].
 
 == Quickstart
 
