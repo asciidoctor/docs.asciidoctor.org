@@ -27,7 +27,6 @@ jobs:
         APPLICATION_ID: ${{ secrets.ALGOLIA_APP_ID }}
         API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
         CONFIG: ${{ github.workspace }}/docsearch/config.json
-        UPDATE_NB_HITS: 'false'
       run: |
         export HOME=/root
         export INDEX_NAME_TMP=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).index_name")_tmp-$GITHUB_RUN_ID
