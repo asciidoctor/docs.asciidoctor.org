@@ -1,4 +1,4 @@
-name: Index
+name: Indexer
 on: [workflow_dispatch]
 #on:
 #  schedule:
