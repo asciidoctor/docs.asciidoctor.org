@@ -19,7 +19,7 @@ node_modules/.bin/antora --html-url-extension-style=indexify --redirect-facility
 [context.production.environment]
 ALGOLIA_APP_ID = "6BQV3WKLS1"
 ALGOLIA_API_KEY = "705aecf4554e01d65e6170e73d6cbbe7"
-ALGOLIA_INDEX_NAME = "asciidoctor-docs"
+ALGOLIA_IDX_NAME = "asciidoctor-docs"
 #GOOGLE_ANALYTICS_KEY = "..."
 
 [context.deploy-preview]
