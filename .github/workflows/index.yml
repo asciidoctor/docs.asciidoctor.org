@@ -14,7 +14,9 @@ jobs:
   build:
     needs: activate
     runs-on: ubuntu-latest
-    container: algolia/docsearch-scraper:v1.6.0
+    container:
+      image: algolia/docsearch-scraper:v1.6.0
+      options: '--entrypoint bash'
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -25,7 +27,9 @@ jobs:
         CONFIG: ${{ github.workspace }}/docsearch/config.json
         UPDATE_NB_HITS: 'false'
       run: |
+        cd /root
         echo $PWD
-        echo $SHELL
+        echo $0
         export INDEX_NAME_TMP=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG').toString()).index_name")_tmp-$GITHUB_RUN_ID
+        ls -l
         pipenv run python -m src.index
