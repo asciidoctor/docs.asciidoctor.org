@@ -31,7 +31,7 @@
     "default": {
       "lvl0": {
         "global": true,
-        "selector": ".nav-panel-explore .context"
+        "selector": ".nav-panel-explore .context .title, .nav-panel-explore .context .version"
       },
       "lvl1": ".doc > h1.page",
       "lvl2": ".doc .sect1 > h2:first-child, .doc > h1.sect0",
