@@ -14,9 +14,7 @@ jobs:
   build:
     needs: activate
     runs-on: ubuntu-latest
-    container:
-      image: algolia/docsearch-scraper:v1.6.0
-      #options: '--entrypoint bash'
+    container: algolia/docsearch-scraper:v1.6.0
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -28,6 +26,9 @@ jobs:
         UPDATE_NB_HITS: 'false'
       run: |
         cd /root
+        pipenv --where
+        pipenv --venv
+        pipenv run python --version
         pipenv run python -m src.index
       #run: |
       #  cd /root
