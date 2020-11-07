@@ -1,0 +1,28 @@
+name: Index
+on:
+  push:
+    branches:
+    - main
+jobs:
+  activate:
+    runs-on: ubuntu-latest
+    if: |
+      github.repository == 'asciidoctor/docs.asciidoctor.org' &&
+      !endsWith(github.event.head_commit.message, ' [skip ci]')
+    steps:
+    - run: echo ok go
+  build:
+    runs-on: ubuntu-latest
+    container: algolia/docsearch-scraper:v1.6.0
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Run indexer
+      env:
+        APPLICATION_ID: ${{ secrets.ALGOLIA_APP_ID }}
+        API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+        CONFIG: ${{ github.workspace }}/docsearch/config.json
+      run: |
+        export INDEX_NAME_TMP=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG').toString()).index_name")_tmp-$GITHUB_RUN_ID
+        cd /root
+        UPDATE_NB_HITS=false pipenv run python -m src.index
