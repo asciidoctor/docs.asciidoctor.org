@@ -29,7 +29,7 @@ jobs:
         CONFIG: ${{ github.workspace }}/docsearch/config.json
         UPDATE_NB_HITS: 'false'
       run: |
-        echo index
+        echo ${{ github.event_name }}
         #export HOME=/root
         #export INDEX_NAME_TMP=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).index_name")_tmp-$GITHUB_RUN_ID
         #cd $HOME
