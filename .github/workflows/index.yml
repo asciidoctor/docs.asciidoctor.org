@@ -24,8 +24,8 @@ jobs:
         API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
         #CONFIG: ${{ github.workspace }}/docsearch/config.json
         UPDATE_NB_HITS: 'false'
+        HOME: /root
       run: |
-        cd /root
         echo $HOME
         #pipenv --where
         #pipenv --venv
