@@ -16,10 +16,10 @@ node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-pl
 node_modules/.bin/antora --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public ../antora-playbook.yml\
 """
 
-#[context.production.environment]
-#ALGOLIA_APP_ID = "..."
-#ALGOLIA_API_KEY = "..."
-#ALGOLIA_INDEX_NAME = "asciidoctor"
+[context.production.environment]
+ALGOLIA_APP_ID = "6BQV3WKLS1"
+ALGOLIA_API_KEY = "705aecf4554e01d65e6170e73d6cbbe7"
+ALGOLIA_INDEX_NAME = "asciidoctor-docs"
 #GOOGLE_ANALYTICS_KEY = "..."
 
 [context.deploy-preview]

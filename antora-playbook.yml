@@ -54,6 +54,6 @@ asciidoc:
     url-rouge: http://rouge.jneen.net
 ui:
   bundle:
-    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-7/ui-bundle.zip
+    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-11/ui-bundle.zip
 output:
   dir: ./public
