@@ -24,11 +24,11 @@ jobs:
         API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
         #CONFIG: ${{ github.workspace }}/docsearch/config.json
         UPDATE_NB_HITS: 'false'
-        HOME: /root
       run: |
-        echo $HOME
-        #pipenv --where
-        #pipenv --venv
+        export HOME=/root
+        cd $HOME
+        pipenv --where
+        pipenv --venv
         #pipenv run python --version
         #pipenv run python -m src.index
       #run: |
