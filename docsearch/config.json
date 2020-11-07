@@ -11,7 +11,7 @@
       "selectors_key": "versionless"
     },
     {
-      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/",
+      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "asciidoctor"
