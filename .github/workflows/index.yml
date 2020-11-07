@@ -1,8 +1,11 @@
 name: Index
 on:
-  push:
-    branches:
-    - main
+  schedule:
+  - cron: '15 4 * * *'
+#on:
+#  push:
+#    branches:
+#    - main
 jobs:
   activate:
     runs-on: ubuntu-latest
