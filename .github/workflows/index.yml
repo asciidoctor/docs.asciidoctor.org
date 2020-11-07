@@ -26,10 +26,11 @@ jobs:
         UPDATE_NB_HITS: 'false'
       run: |
         cd /root
-        pipenv --where
-        pipenv --venv
-        pipenv run python --version
-        pipenv run python -m src.index
+        echo $HOME
+        #pipenv --where
+        #pipenv --venv
+        #pipenv run python --version
+        #pipenv run python -m src.index
       #run: |
       #  cd /root
       #  export INDEX_NAME_TMP=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG').toString()).index_name")_tmp-$GITHUB_RUN_ID
