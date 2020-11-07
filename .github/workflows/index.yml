@@ -1,7 +1,8 @@
 name: Index
-on:
-  schedule:
-  - cron: '15 4 * * *'
+on: [workflow_dispatch]
+#on:
+#  schedule:
+#  - cron: '15 4 * * *'
 #on:
 #  push:
 #    branches:
@@ -17,7 +18,7 @@ jobs:
   build:
     needs: activate
     runs-on: ubuntu-latest
-    container: algolia/docsearch-scraper:v1.6.0
+    container: algolia/docsearch-scraper:v1.12.0
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -28,7 +29,8 @@ jobs:
         CONFIG: ${{ github.workspace }}/docsearch/config.json
         UPDATE_NB_HITS: 'false'
       run: |
-        export HOME=/root
-        cd $HOME
-        export INDEX_NAME_TMP=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG').toString()).index_name")_tmp-$GITHUB_RUN_ID
-        pipenv run python -m src.index
+        echo index
+        #export HOME=/root
+        #export INDEX_NAME_TMP=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).index_name")_tmp-$GITHUB_RUN_ID
+        #cd $HOME
+        #pipenv run python -m src.index
