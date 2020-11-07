@@ -12,6 +12,7 @@ jobs:
     steps:
     - run: echo ok go
   build:
+    needs: activate
     runs-on: ubuntu-latest
     container: algolia/docsearch-scraper:v1.6.0
     steps:
