@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: algolia/docsearch-scraper:v1.6.0
-      options: '--entrypoint bash'
+      #options: '--entrypoint bash'
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -24,12 +24,12 @@ jobs:
       env:
         APPLICATION_ID: ${{ secrets.ALGOLIA_APP_ID }}
         API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-        CONFIG: ${{ github.workspace }}/docsearch/config.json
+        #CONFIG: ${{ github.workspace }}/docsearch/config.json
         UPDATE_NB_HITS: 'false'
       run: |
         cd /root
-        echo $PWD
-        echo $0
-        export INDEX_NAME_TMP=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG').toString()).index_name")_tmp-$GITHUB_RUN_ID
-        ls -l
         pipenv run python -m src.index
+      #run: |
+      #  cd /root
+      #  export INDEX_NAME_TMP=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG').toString()).index_name")_tmp-$GITHUB_RUN_ID
+      #  pipenv run python -m src.index
