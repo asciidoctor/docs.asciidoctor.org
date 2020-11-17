@@ -9,11 +9,10 @@ git:
   ensure_git_suffix: false
 content:
   sources:
-  - url: &asciidoctor-url https://github.com/graphitefriction/asciidoctor
-    branches: &asciidoctor-branches new-docs
-    start_path: docs/asciidoc
-  - url: *asciidoctor-url
-    branches: *asciidoctor-branches
+  - url: https://github.com/asciidoctor/asciidoc-docs
+    branches: main
+  - url: https://github.com/graphitefriction/asciidoctor
+    branches: new-docs
     start_path: docs/asciidoctor
   - url: https://github.com/asciidoctor/asciidoctor.js
     branches: master
