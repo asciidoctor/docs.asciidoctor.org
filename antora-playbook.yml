@@ -23,6 +23,8 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-cli.js
     branches: master
     start_path: docs
+  - url: https://github.com/asciidoctor/asciidoctor-project-docs
+    branches: main
 asciidoc:
   attributes:
     page-pagination: ''
