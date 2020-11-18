@@ -16,7 +16,7 @@ content:
     branches: main
   - url: https://github.com/graphitefriction/asciidoctor
     branches: new-docs
-    start_path: docs/asciidoctor
+    start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor.js
     branches: master
     start_path: docs
