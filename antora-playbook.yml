@@ -15,7 +15,7 @@ content:
   - url: https://github.com/asciidoctor/asciidoc-docs
     branches: main
   - url: https://github.com/graphitefriction/asciidoctor
-    branches: new-docs
+    branches: issue-3861-import-docs
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor.js
     branches: master
