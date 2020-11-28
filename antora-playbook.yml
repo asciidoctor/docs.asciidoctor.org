@@ -37,6 +37,8 @@ asciidoc:
     hide-uri-scheme: '@'
     url-project: https://asciidoctor.org
     url-org: https://github.com/asciidoctor
+  extensions:
+  - ./lib/collapsible-block-tree-processor.js
 ui:
   bundle:
     url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-22/ui-bundle.zip
