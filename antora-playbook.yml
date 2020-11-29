@@ -39,8 +39,9 @@ asciidoc:
     url-org: https://github.com/asciidoctor
   extensions:
   - ./lib/collapsible-block-tree-processor.js
+  - ./lib/global-table-attributes-tree-processor.js
 ui:
   bundle:
-    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-22/ui-bundle.zip
+    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-30/ui-bundle.zip
 output:
   dir: ./public
