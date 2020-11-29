@@ -32,6 +32,8 @@ asciidoc:
     idprefix: '@'
     idseparator: '-@'
     table-caption: false
+    table-frame: 'none@'
+    table-grid: 'rows@'
     example-caption: false
     listing-caption: false
     hide-uri-scheme: '@'
