@@ -40,8 +40,8 @@ asciidoc:
     url-project: https://asciidoctor.org
     url-org: https://github.com/asciidoctor
   extensions:
-  - ./lib/collapsible-block-tree-processor.js
   - ./lib/global-table-attributes-tree-processor.js
+  - ./lib/collapsible-block-tree-processor.js
 ui:
   bundle:
     url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-38/ui-bundle.zip
