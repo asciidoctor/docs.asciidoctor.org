@@ -26,7 +26,7 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-project-docs
     branches: main
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
-    branches: 'issue-385-antora-docs'
+    branches: master
     start_path: docs
 
 asciidoc:
