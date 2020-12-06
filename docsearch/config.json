@@ -2,7 +2,7 @@
   "index_name": "asciidoctor-docs",
   "start_urls": [
     {
-      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/current/",
+      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/latest/",
       "variables": {
         "component": [
           "asciidoc"
@@ -17,7 +17,7 @@
           "asciidoctor"
         ],
         "version": [
-          "current"
+          "latest"
         ]
       }
     }
