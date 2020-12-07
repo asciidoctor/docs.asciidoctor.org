@@ -30,7 +30,7 @@ content:
     branches: main
 asciidoc:
   attributes:
-    page-component-order: '*, community'
+    page-component-order: '*, reveal.js-converter, community'
     page-pagination: ''
     experimental: ''
     idprefix: '@'
