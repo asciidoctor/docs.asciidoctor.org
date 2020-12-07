@@ -23,12 +23,11 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-cli.js
     branches: master
     start_path: docs
-  - url: https://github.com/asciidoctor/asciidoctor-community-docs
-    branches: main
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
     branches: master
     start_path: docs
-
+  - url: https://github.com/asciidoctor/asciidoctor-community-docs
+    branches: main
 asciidoc:
   attributes:
     page-component-order: '*, community'
