@@ -9,7 +9,7 @@ git:
   ensure_git_suffix: false
 urls:
   latest_version_segment_strategy: redirect:to
-  latest_version_segment: current
+  latest_version_segment: latest
 content:
   sources:
   - url: https://github.com/asciidoctor/asciidoc-docs
