@@ -28,18 +28,17 @@ node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-pl
 node_modules/.bin/antora --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
 """
 
-#[[plugins]]
-#package = "netlify-plugin-checklinks"
-#
-#[plugins.inputs]
-#entryPoints = ["**/*.html"]
-#recursive = true
-#pretty = true
-## the leading space in the skipPattern is significant
-#skipPatterns = [" public/index.html"]
-#todoPatterns = []
-#checkExternal = false
-#followSourceMaps = false
+[[plugins]]
+package = "netlify-plugin-checklinks"
+
+[plugins.inputs]
+entryPoints = ["**/*.html"]
+recursive = true
+pretty = true
+skipPatterns = ["load ../"]
+todoPatterns = []
+checkExternal = false
+followSourceMaps = false
 
 [[headers]]
 for = "/_/font/*"
