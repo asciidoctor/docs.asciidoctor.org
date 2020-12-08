@@ -20,6 +20,39 @@
           "latest"
         ]
       }
+    },
+    {
+      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/(?P<version>.*?)/",
+      "variables": {
+        "component": [
+          "asciidoctor.js"
+        ],
+        "version": [
+          "latest"
+        ]
+      }
+    },
+    {
+      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/(?P<version>.*?)/",
+      "variables": {
+        "component": [
+          "reveal.js-converter"
+        ],
+        "version": [
+          "latest"
+        ]
+      }
+    },
+    {
+      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/(?P<version>.*?)/",
+      "variables": {
+        "component": [
+          "maven-tools"
+        ],
+        "version": [
+          "latest"
+        ]
+      }
     }
   ],
   "sitemap_urls": [
