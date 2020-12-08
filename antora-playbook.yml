@@ -18,7 +18,7 @@ content:
     branches: issue-3861-import-docs
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor.js
-    branches: 'v2.2.x'
+    branches: v2.2.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-cli.js
     branches: master
