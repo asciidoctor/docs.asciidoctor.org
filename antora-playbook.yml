@@ -12,6 +12,9 @@ urls:
   latest_version_segment: latest
 content:
   sources:
+  - url: https://github.com/asciidoctor/asciidoctor-community-docs
+    branches: main
+    start_path: docs
   - url: https://github.com/asciidoctor/asciidoc-docs
     branches: main
   - url: https://github.com/graphitefriction/asciidoctor
@@ -29,8 +32,6 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
     branches: master
     start_path: docs
-  - url: https://github.com/asciidoctor/asciidoctor-community-docs
-    branches: main
 asciidoc:
   attributes:
     page-component-order: '*, reveal.js-converter, community'
