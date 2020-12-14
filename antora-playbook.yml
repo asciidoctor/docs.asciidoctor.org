@@ -12,8 +12,8 @@ urls:
   latest_version_segment: latest
 content:
   sources:
-  - url: https://github.com/asciidoctor/asciidoctor-community-docs
-    branches: main
+  - url: https://github.com/mojavelinux/asciidoctor-community-docs
+    branches: home-page-content
     start_paths: about, home
   - url: https://github.com/asciidoctor/asciidoc-docs
     branches: main
