@@ -14,7 +14,7 @@ content:
   sources:
   - url: https://github.com/asciidoctor/asciidoctor-community-docs
     branches: main
-    start_path: docs
+    start_path: about
   - url: https://github.com/asciidoctor/asciidoc-docs
     branches: main
   - url: https://github.com/graphitefriction/asciidoctor
@@ -34,7 +34,7 @@ content:
     start_path: docs
 asciidoc:
   attributes:
-    page-component-order: '*, reveal.js-converter, community'
+    page-component-order: '*, reveal.js-converter, about'
     page-pagination: ''
     experimental: ''
     idprefix: '@'
