@@ -3,7 +3,7 @@ runtime:
 site:
   title: Asciidoctor Docs
   url: https://docs.asciidoctor.org
-  start_page: asciidoctor::index.adoc
+  start_page: home::index.adoc
   robots: allow
 git:
   ensure_git_suffix: false
@@ -14,7 +14,7 @@ content:
   sources:
   - url: https://github.com/asciidoctor/asciidoctor-community-docs
     branches: main
-    start_path: about
+    start_paths: about, home
   - url: https://github.com/asciidoctor/asciidoc-docs
     branches: main
   - url: https://github.com/graphitefriction/asciidoctor
@@ -34,7 +34,7 @@ content:
     start_path: docs
 asciidoc:
   attributes:
-    page-component-order: '*, reveal.js-converter, about'
+    page-component-order: '!home, *, reveal.js-converter, about'
     page-pagination: ''
     experimental: ''
     idprefix: '@'
@@ -52,6 +52,6 @@ asciidoc:
   - ./lib/collapsible-block-tree-processor.js
 ui:
   bundle:
-    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-94/ui-bundle.zip
+    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-97/ui-bundle.zip
 output:
   dir: ./public
