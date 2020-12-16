@@ -107,7 +107,6 @@ Netlify redirects all traffic to HTTPS automatically (i.e., it forces HTTPS).
 == Copyright and License
 
 Copyright (C) 2020-present Dan Allen, Sarah White, and individual contributors to the docs.asciidoctor.org repository.
-
 The source and configuration files in this repository are licensed under the terms of the MIT License.
 
 The build for this documentation site sources content from various repositories within the Asciidoctor organization on GitHub.
