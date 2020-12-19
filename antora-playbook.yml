@@ -30,7 +30,7 @@ content:
     branches: master
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
-    branches: master
+    branches: maint-4.1.x
     start_path: docs
 asciidoc:
   attributes:
