@@ -44,3 +44,11 @@ followSourceMaps = false
 for = "/_/font/*"
   [headers.values]
   Cache-Control = "public,max-age=604800"
+
+# NOTE the following redirects get appended to the redirects defined in the _redirects file
+
+[[redirects]]
+from = "https://asciidoctor-docs.netlify.com/*"
+to = "https://docs.asciidoctor.org/:splat"
+status = 301
+force = true
