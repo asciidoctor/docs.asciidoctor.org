@@ -4,8 +4,7 @@
 ifdef::env-github[:badges:]
 // Project URIs:
 :url-project: https://asciidoctor.org
-//:url-site: https://docs.asciidoctor.org
-:url-site: https://asciidoctor-docs.netlify.com
+:url-site: https://docs.asciidoctor.org
 :url-org: https://github.com/asciidoctor
 :url-docs-ui: https://github.com/asciidoctor/asciidoctor-docs-ui
 // External URIs:
@@ -19,11 +18,7 @@ ifdef::badges[]
 image:https://api.netlify.com/api/v1/badges/26d47a9c-82b9-4a7c-92fd-9bdbee16585f/deploy-status[Deploy Status,link={url-netlify-deploys}]
 endif::[]
 
-This repository contains an Antora playbook project for building the (future) documentation site for the Asciidoctor ecosystem.
-//published at {url-site}.
-
-You can find a preview of the site at {url-site}.
-*Keep in mind this URL is only temporary.*
+This repository contains an Antora playbook project for building the documentation site for the Asciidoctor ecosystem published to {url-site}.
 
 == Documentation Structure
 
