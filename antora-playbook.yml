@@ -20,10 +20,9 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor
     branches: master
     start_path: docs
-  - url: https://github.com/abelsromero/asciidoctorj
-    branches: feature/migrate-docs-to-antora-site
+  - url: https://github.com/asciidoctor/asciidoctorj
+    branches: master
     start_path: docs
-    edit_url: false
   - url: https://github.com/asciidoctor/asciidoctor.js
     branches: v2.2.x
     start_path: docs
