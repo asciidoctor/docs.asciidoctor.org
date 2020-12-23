@@ -2,7 +2,7 @@
   "index_name": "asciidoctor-docs",
   "start_urls": [
     {
-      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/latest/",
+      "url": "https://docs.asciidoctor.org/(?P<component>.*?)/latest/",
       "variables": {
         "component": [
           "asciidoc"
@@ -11,7 +11,7 @@
       "selectors_key": "versionless"
     },
     {
-      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "asciidoctor"
@@ -22,7 +22,7 @@
       }
     },
     {
-      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "asciidoctor.js"
@@ -33,7 +33,7 @@
       }
     },
     {
-      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "asciidoctorj"
@@ -44,7 +44,7 @@
       }
     },
     {
-      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "reveal.js-converter"
@@ -55,7 +55,7 @@
       }
     },
     {
-      "url": "https://asciidoctor-docs.netlify.app/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "maven-tools"
@@ -67,7 +67,7 @@
     }
   ],
   "sitemap_urls": [
-    "https://asciidoctor-docs.netlify.app/sitemap.xml"
+    "https://docs.asciidoctor.org/sitemap.xml"
   ],
   "scrape_start_urls": false,
   "stop_urls": [],
