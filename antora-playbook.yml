@@ -32,12 +32,15 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-maven-plugin
     branches: master
     start_path: docs
+  - url: https://github.com/asciidoctor/asciidoclet
+    branches: master
+    start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
     branches: master
     start_path: docs
 asciidoc:
   attributes:
-    page-component-order: '!home, *, reveal.js-converter, about'
+    page-component-order: '!home, *, asciidoclet, reveal.js-converter, about'
     page-pagination: ''
     experimental: ''
     idprefix: '@'
