@@ -26,7 +26,7 @@ jobs:
       run: |
         SITEMAP_URL=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).sitemap_urls[0].replace('.xml','-home.xml')")
         # the index is stale if the site has been published in the last 24 hours
-        INDEX_STALE=$(curl -s $SITEMAP_URL | awk '/<lastmod>/{print gensub(/<lastmod>(.+)<\/lastmod>/,"\\1",1);exit}' | node -p 'Date.now() - +Date.parse(require("fs").readFileSync(0).toString().trim()) < 86400000')
+        INDEX_STALE=$(curl -s $SITEMAP_URL | awk '/<lastmod>/{gsub(/<\/?lastmod>/,"");print;exit}' | node -p 'Date.now() - +Date.parse(require("fs").readFileSync(0).toString().trim()) < 86400000')
         if [ "$INDEX_STALE" == "true" ]; then
           export HOME=/root
           export INDEX_NAME_TMP=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).index_name")_tmp-$GITHUB_RUN_ID
