@@ -24,11 +24,13 @@ jobs:
         API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
         CONFIG: ${{ github.workspace }}/docsearch/config.json
       run: |
+        INDEX_NAME=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).index_name")
         SITEMAP_URL=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).sitemap_urls[0].replace('.xml','-home.xml')")
-        INDEX_STALE=$(curl -s $SITEMAP_URL | awk '/<lastmod>/{gsub(/<\/?lastmod>/,"");print;exit}' | node -p 'Date.now() - Date.parse(require("fs").readFileSync(0).toString().trim()) < 86400000')
-        if "$INDEX_STALE" -eq 'true'; then
+        SITE_LAST_MODIFIED=$(curl -s $SITEMAP_URL | awk '/<lastmod>/{gsub(/<\/?lastmod>/,"");print;exit}' | node -p 'Date.parse(require("fs").readFileSync(0).toString().trim())')
+        SITE_LAST_INDEXED=$(curl -s -H X-Algolia-Application-Id:$APPLICATION_ID -H X-Algolia-API-Key:$API_KEY https://$APPLICATION_ID-dsn.algolia.net/1/indexes | node -p "Date.parse(JSON.parse(require('fs').readFileSync(0).toString()).items.find((it) => it.name == '$INDEX_NAME').updatedAt)")
+        if [ $SITE_LAST_MODIFIED -lt 82800000 ] && [ $SITE_LAST_INDEXED -gt 82800000 ]; then
           export HOME=/root
-          export INDEX_NAME_TMP=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).index_name")_tmp-$GITHUB_RUN_ID
+          export INDEX_NAME_TMP=$INDEX_NAME_tmp-$GITHUB_RUN_ID
           cd $HOME
           pipenv run python -m src.index
         else
