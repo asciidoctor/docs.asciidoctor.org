@@ -47,6 +47,17 @@
       "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
+          "asciidoclet"
+        ],
+        "version": [
+          "latest"
+        ]
+      }
+    },
+    {
+      "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/",
+      "variables": {
+        "component": [
           "reveal.js-converter"
         ],
         "version": [
