@@ -6,7 +6,8 @@ ifdef::env-github[:badges:]
 :url-project: https://asciidoctor.org
 :url-site: https://docs.asciidoctor.org
 :url-org: https://github.com/asciidoctor
-:url-docs-ui: https://github.com/asciidoctor/asciidoctor-docs-ui
+:url-docs: {url-org}/docs.asciidoctor.org
+:url-docs-ui: {url-org}/asciidoctor-docs-ui
 // External URIs:
 :url-antora: https://antora.org
 :url-antora-install: https://docs.antora.org/antora/latest/install/install-antora/
@@ -18,7 +19,9 @@ ifdef::badges[]
 image:https://api.netlify.com/api/v1/badges/26d47a9c-82b9-4a7c-92fd-9bdbee16585f/deploy-status[Deploy Status,link={url-netlify-deploys}]
 endif::[]
 
-This repository contains an Antora playbook project for building the documentation site for the Asciidoctor ecosystem at {url-site}.
+This repository, {url-docs}, contains an Antora playbook project for building the documentation site for the Asciidoctor ecosystem at {url-site}.
+
+File issues for this playbook project at {url-docs}/issues.
 
 == Documentation Structure
 
@@ -31,16 +34,20 @@ The UI for the site is hosted in a separate repository, {url-docs-ui}[asciidocto
 
 == Quickstart
 
-To generate the Asciidoctor Docs site, you first need to install {url-antora}[Antora].
-Follow the {url-antora-install}[installation instructions] in the Antora documentation.
-We recommend installing it globally, if possible.
+To install needed dependencies, such as Antora, in the netlify folder run
 
-Once Antora is installed, run the `antora` command on the playbook file hosted in this repository.
+[source,console]
+npm run clean-install
 
- $ antora antora-playbook.yml
+To build the site locally, run
 
-This command will generate a site into [.path]_public/_.
-Navigate to [.path]_public/index.html_ in your browser to view the site offline.
+[source,console]
+npm run build
+
+or, to fetch remote content changes,
+
+[source,console]
+npm run build-fetch
 
 == How to Upgrade Antora in CI
 
@@ -52,7 +59,7 @@ The version should be an exact number so we have control over exactly when it ge
 
 . Switch to the netlify directory and run the following command to update [.path]_package-lock.json_:
 
- $ npm i --no-optional
+ $ npm run clean-install
 
 . If there are new options in Antora we want to take advantage of, update the `antora` command defined in [.path]_netlify.toml_.
 Otherwise, leave this file alone.

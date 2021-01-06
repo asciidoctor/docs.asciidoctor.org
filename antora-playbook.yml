@@ -64,3 +64,4 @@ ui:
     url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-209/ui-bundle.zip
 output:
   dir: ./public
+  clean: true
