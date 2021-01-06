@@ -47,7 +47,7 @@ npm run build
 or, to fetch remote content changes,
 
 [source,console]
-npm run build-fetch
+npm run build -- --fetch
 
 == How to Upgrade Antora in CI
 
