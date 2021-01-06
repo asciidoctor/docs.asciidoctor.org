@@ -52,3 +52,9 @@ from = "https://asciidoctor-docs.netlify.com/*"
 to = "https://docs.asciidoctor.org/:splat"
 status = 301
 force = true
+
+[[redirects]]
+from = "/asciidoctor.js"
+to = "/asciidoctor.js/latest/"
+status = 301
+force = true
