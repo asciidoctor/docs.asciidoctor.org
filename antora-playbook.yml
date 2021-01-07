@@ -38,6 +38,9 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
     branches: maint-4.1.x
     start_path: docs
+  - url: https://github.com/asciidoctor/asciidoctor-diagram
+    branches: master
+    start_path: docs    
 asciidoc:
   attributes:
     page-component-order: '!home, *, asciidoclet, reveal.js-converter, about'
