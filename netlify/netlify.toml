@@ -10,10 +10,17 @@ NODE_VERSION = "10"
 NPM_CONFIG_OPTIONAL = "false"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 
+[build.processing]
+skip_processing = false
+
+[build.processing.images]
+compress = true
+
 [context.production]
 command = """\
 node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml && \
-node_modules/.bin/antora --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public ../antora-playbook.yml\
+node_modules/.bin/antora --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public ../antora-playbook.yml && \
+sed -i 's/url(\.\.\//url(\/_\//g' public/_/css/site.css\
 """
 
 [context.production.environment]
@@ -25,7 +32,8 @@ ALGOLIA_IDX_NAME = "asciidoctor-docs"
 [context.deploy-preview]
 command = """\
 node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml && \
-node_modules/.bin/antora --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
+node_modules/.bin/antora --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml && \
+sed -i 's/url(\.\.\//url(\/_\//g' public/_/css/site.css\
 """
 
 [[plugins]]
