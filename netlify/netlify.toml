@@ -20,7 +20,7 @@ compress = true
 command = """\
 node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml && \
 node_modules/.bin/antora --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public ../antora-playbook.yml && \
-sed -i 's/url(\.\.\//url(\/_\//g' public/_/css/site.css\
+sed -i 's;url([.][.]/;url(/_/;g' public/_/css/site.css\
 """
 
 [context.production.environment]
@@ -33,7 +33,7 @@ ALGOLIA_IDX_NAME = "asciidoctor-docs"
 command = """\
 node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml && \
 node_modules/.bin/antora --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml && \
-sed -i 's/url(\.\.\//url(\/_\//g' public/_/css/site.css\
+sed -i 's;url([.][.]/;url(/_/;g' public/_/css/site.css\
 """
 
 [[plugins]]
