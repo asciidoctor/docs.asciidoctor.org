@@ -26,7 +26,7 @@ jobs:
         PUSH_URL=$(git config --get branch.$CURRENT_BRANCH.remote)
         REPO_PATH=${PUSH_URL##*:}
         git config --local branch.$CURRENT_BRANCH.remote https://${{ secrets.DEPLOY_PREVIEW_GITHUB_TOKEN }}:@github.com/${REPO_PATH}
-        git commit -m 'ack retry deploy' --allow-empty
+        git commit -m 'ack retry deploy [skip ci]' --allow-empty
         git push
         git reset --hard $HEAD_COMMIT
         git push --force
