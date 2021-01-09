@@ -5,24 +5,28 @@ on:
 jobs:
   pr-comment:
     runs-on: ubuntu-latest
-    if: github.event.issue.pull_request && (github.event.comment.user.site_admin || github.event.issue.user.id == github.event.comment.user.id) && github.event.issue.comment == '/retry'
+    if: github.event.issue.pull_request
     steps:
-    - name: Clone Repo
-      uses: actions/checkout@v2
-    - name: Checkout PR
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PULL_REQUEST_URL: ${{ github.event.issue.pull_request.url }}
-      run: |
-        hub pr checkout ${PULL_REQUEST_URL##*/}
-    - name: Configure Git
-      run: |
-        git config --global user.email docbot@asciidoctor.org
-        git config --global user.name 'Asciidoctor DocBot'
-    - name: Push empty commit
-      run: |
-        #HEAD_COMMIT=$(git rev-parse HEAD)
-        git commit -m 'retry deploy' --allow-empty
-        git push
-        #git reset --hard $HEAD_COMMIT
-        #git push
+    - name: Proceed
+      run: echo ok go
+    #if: github.event.issue.pull_request && (github.event.comment.user.site_admin || github.event.issue.user.id == github.event.comment.user.id) && github.event.issue.comment == '/retry'
+    #steps:
+    #- name: Clone Repo
+    #  uses: actions/checkout@v2
+    #- name: Checkout PR
+    #  env:
+    #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #    PULL_REQUEST_URL: ${{ github.event.issue.pull_request.url }}
+    #  run: |
+    #    hub pr checkout ${PULL_REQUEST_URL##*/}
+    #- name: Configure Git
+    #  run: |
+    #    git config --global user.email docbot@asciidoctor.org
+    #    git config --global user.name 'Asciidoctor DocBot'
+    #- name: Push empty commit
+    #  run: |
+    #    #HEAD_COMMIT=$(git rev-parse HEAD)
+    #    git commit -m 'retry deploy' --allow-empty
+    #    git push
+    #    #git reset --hard $HEAD_COMMIT
+    #    #git push
