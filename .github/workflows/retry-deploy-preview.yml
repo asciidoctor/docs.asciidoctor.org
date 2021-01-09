@@ -21,6 +21,10 @@ jobs:
         git config --global user.name 'Asciidoctor DocBot'
     - name: Push empty commit
       run: |
+        CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+        PUSH_URL=$(git config --get branch.$CURRENT_BRANCH.remote)
+        REPO_PATH=${PUSH_URL##*:}
+        git config --local branch.$CURRENT_BRANCH.remote https://${{ secrets.DEPLOY_PREVIEW_GITHUB_TOKEN }}:@github.com/${REPO_PATH}
         #HEAD_COMMIT=$(git rev-parse HEAD)
         git commit -m 'retry deploy' --allow-empty
         git push
