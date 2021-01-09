@@ -1,3 +1,4 @@
+name: Retry Deploy Preview
 on:
   issue_comment:
     types: [created]
