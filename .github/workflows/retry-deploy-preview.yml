@@ -5,7 +5,7 @@ on:
 jobs:
   pr-comment:
     runs-on: ubuntu-latest
-    if: github.event.issue.pull_request && github.event.issue.user.id == github.event.comment.user.id && github.event.issue.comment == '/retry'
+    if: github.event.issue.pull_request && github.event.issue.user.id == github.event.comment.user.id && github.event.comment.body == '/retry'
     steps:
     - name: Clone Repo
       uses: actions/checkout@v2
