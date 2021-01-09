@@ -11,7 +11,7 @@ jobs:
       run: |
         echo ${{ github.event.comment.user.id }}
         echo ${{ github.event.issue.user.id }}
-        echo ${{ github.event.comment.site_admin }}
+        echo ${{ github.event.comment.site_admin == true }}
     #if: github.event.issue.pull_request && (github.event.comment.user.site_admin || github.event.issue.user.id == github.event.comment.user.id) && github.event.issue.comment == '/retry'
     #steps:
     #- name: Clone Repo
