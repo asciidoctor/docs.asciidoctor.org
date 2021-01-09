@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Proceed
       run: |
-        echo -e "|${{ github.event.issue.comment }}|"
+        echo -e "|${{ github.event.comment.body }}|"
         echo ${{ github.event.comment.user.id }}
     #if: github.event.issue.pull_request && (github.event.comment.user.site_admin || github.event.issue.user.id == github.event.comment.user.id) && github.event.issue.comment == '/retry'
     #steps:
