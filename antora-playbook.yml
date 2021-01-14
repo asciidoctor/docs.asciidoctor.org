@@ -43,7 +43,7 @@ content:
     start_path: docs
 asciidoc:
   attributes:
-    page-component-order: '!home, *, asciidoclet, reveal.js-converter, about'
+    page-component-order: '!home, *, asciidoclet, reveal.js-converter, diagram-extension, about'
     page-pagination: ''
     experimental: ''
     idprefix: '@'
