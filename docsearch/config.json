@@ -58,7 +58,7 @@
       "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
-          "reveal.js-converter"
+          "diagram-extension"
         ],
         "version": [
           "latest"
@@ -70,6 +70,17 @@
       "variables": {
         "component": [
           "maven-tools"
+        ],
+        "version": [
+          "latest"
+        ]
+      }
+    },
+    {
+      "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/",
+      "variables": {
+        "component": [
+          "reveal.js-converter"
         ],
         "version": [
           "latest"
