@@ -61,6 +61,6 @@ asciidoc:
   - ./lib/collapsible-block-tree-processor.js
 ui:
   bundle:
-    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-203/ui-bundle.zip
+    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-209/ui-bundle.zip
 output:
   dir: ./public
