@@ -7,23 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.issue.pull_request && github.event.issue.user.id == github.event.comment.user.id && github.event.comment.body == '/retry'
     steps:
-    - name: Clone Repo
-      uses: actions/checkout@v2
-    - name: Checkout PR
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PULL_REQUEST_URL: ${{ github.event.issue.pull_request.url }}
-      run: |
-        hub pr checkout ${PULL_REQUEST_URL##*/}
-    - name: Configure Git
-      run: |
-        git config --global user.email docbot@asciidoctor.org
-        git config --global user.name 'Asciidoctor DocBot'
-    - name: Push empty commit
-      run: |
-        CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-        PUSH_URL=$(git config --get branch.$CURRENT_BRANCH.remote)
-        REPO_PATH=${PUSH_URL##*:}
-        git config --local branch.$CURRENT_BRANCH.remote https://${{ secrets.DEPLOY_PREVIEW_GITHUB_TOKEN }}:@github.com/${REPO_PATH}
-        git commit -m 'ack retry deploy' --allow-empty
-        git push
+    - name: Retry Deploy Preview
+      uses: mojavelinux/retry-netlify-deploy-preview-action@v0
+      with:
+        netlify-token: ${{ secrets.NETLIFY_TOKEN }}
+        site-id: ${{ secrets.NETLIFY_SITE_ID }}
+        pull-request-url: ${{ github.event.issue.pull_request.url }} 
