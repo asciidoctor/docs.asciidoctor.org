@@ -8,7 +8,7 @@ jobs:
     if: github.event.issue.pull_request && github.event.issue.user.id == github.event.comment.user.id && github.event.comment.body == '/retry'
     steps:
     - name: Retry Deploy Preview
-      uses: mojavelinux/retry-netlify-deploy-preview-action@v1.1.0
+      uses: mojavelinux/retry-netlify-deploy-preview-action@v1.1.1
       with:
         netlify-token: ${{ secrets.NETLIFY_TOKEN }}
         pull-request-url: ${{ github.event.issue.pull_request.url }} 
