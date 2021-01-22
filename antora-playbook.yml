@@ -41,9 +41,12 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-diagram
     branches: master
     start_path: docs
+  - url: https://github.com/asciidoctor/jekyll-asciidoc
+    branches: v3.0.x
+    start_path: docs
 asciidoc:
   attributes:
-    page-component-order: '!home, *, asciidoclet, reveal.js-converter, diagram-extension, about'
+    page-component-order: '!home, *, asciidoclet, reveal.js-converter, jekyll-asciidoc, diagram-extension, about'
     page-pagination: ''
     experimental: ''
     idprefix: '@'
