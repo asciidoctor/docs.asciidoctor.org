@@ -39,7 +39,7 @@ content:
     branches: maint-4.1.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-diagram
-    branches: master
+    branches: release
     start_path: docs
 asciidoc:
   attributes:
