@@ -5,7 +5,9 @@
   "scripts": {
     "clean-build": "npm run clean-install;npm run build",
     "clean-install": "npm i --cache=.cache/npm --no-optional",
-    "build": "antora ../antora-playbook.yml --stacktrace"
+    "check": "antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml",
+    "quick-build": "antora ../antora-playbook.yml --stacktrace",
+    "build": "npm run check;npm run quick-build"
   },
   "devDependencies": {
     "@antora/cli": "3.0.0-alpha.1",
