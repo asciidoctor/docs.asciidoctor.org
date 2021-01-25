@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Retry Deploy Preview
       # see https://github.com/mojavelinux/retry-netlify-deploy-preview-action
-      uses: mojavelinux/retry-netlify-deploy-preview-action@v1.1.2
+      uses: mojavelinux/retry-netlify-deploy-preview-action@v1
       with:
         netlify-token: ${{ secrets.NETLIFY_TOKEN }}
         pull-request-url: ${{ github.event.issue.pull_request.url }} 
