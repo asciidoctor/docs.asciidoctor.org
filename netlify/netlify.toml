@@ -13,6 +13,10 @@ ANTORA_CACHE_DIR = "node_modules/.cache/antora"
 [build.processing]
 skip_processing = false
 
+[build.processing.html]
+# NOTE must be set to enable forwarding of paths like /asciidoc/latest to /asciidoc/latest/
+pretty_urls = true
+
 [build.processing.images]
 compress = true
 
