@@ -28,7 +28,8 @@ jobs:
         SITEMAP_URL=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).sitemap_urls[0].replace('.xml','-home.xml')")
         SITE_LAST_MODIFIED=$(curl -s $SITEMAP_URL | awk '/<lastmod>/{gsub(/<\/?lastmod>/,"");print;exit}' | node -p 'Date.parse(require("fs").readFileSync(0).toString().trim())')
         SITE_LAST_INDEXED=$(curl -s -H X-Algolia-Application-Id:$APPLICATION_ID -H X-Algolia-API-Key:$API_KEY https://$APPLICATION_ID-dsn.algolia.net/1/indexes | node -p "Date.parse(JSON.parse(require('fs').readFileSync(0).toString()).items.find((it) => it.name == '$INDEX_NAME').updatedAt)")
-        if [ $SITE_LAST_MODIFIED -lt 82800000 ] && [ $SITE_LAST_INDEXED -gt 82800000 ]; then
+        # only run indexer if index is more than 2 days out of date
+        if (( $SITE_LAST_MODIFIED - 172800000 > $SITE_LAST_INDEXED )); then
           export HOME=/root
           export INDEX_NAME_TMP=$INDEX_NAME_tmp-$GITHUB_RUN_ID
           cd $HOME
