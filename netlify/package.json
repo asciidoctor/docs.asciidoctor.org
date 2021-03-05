@@ -2,9 +2,27 @@
   "name": "asciidoctor-docs-netlify",
   "description": "Asciidoctor Docs (Production and Deploy Previews)",
   "private": true,
+  "scripts": {
+    "clean-install": "rm -rf .cache node_modules package-lock.json;npm run plain-install",
+    "plain-install": "npm i --cache=.cache/npm --no-optional",
+    "build": "dj-antora ../antora-playbook.yml --stacktrace --fetch"
+  },
   "devDependencies": {
-    "@antora/cli": "3.0.0-alpha.1",
-    "@antora/site-generator-default": "3.0.0-alpha.1",
-    "@antora/xref-validator": "git+https://gitlab.com/antora/xref-validator#v1.0.0-alpha.13"
+    "@djencks/asciidoc-loader": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-asciidoc-loader-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/cli": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-cli-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/content-aggregator": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-content-aggregator-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/content-classifier": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-content-classifier-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/document-converter": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-document-converter-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/navigation-builder": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-navigation-builder-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/page-composer": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-page-composer-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/playbook-builder": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-playbook-builder-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/redirect-producer": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-redirect-producer-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/site-generator-default": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-site-generator-default-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/site-mapper": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-site-mapper-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/site-publisher": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-site-publisher-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/ui-loader": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-ui-loader-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/util": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-util-v3.0.0-alpha.1-i699-1.tgz",
+    "@djencks/antora-lunr": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-antora-lunr-0.8.0.tgz",
+    "@djencks/asciidoctor-docs-lunr-ui": "https://experimental-repo.s3-us-west-1.amazonaws.com/djencks-asciidoctor-docs-lunr-ui-0.0.1.tgz"
   }
 }

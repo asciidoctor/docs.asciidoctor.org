@@ -62,6 +62,8 @@ asciidoc:
   - ./lib/collapsible-block-tree-processor.js
 ui:
   bundle:
-    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-220/ui-bundle.zip
+    url: ./netlify/node_modules/@djencks/asciidoctor-docs-lunr-ui/build/asciidoctor-docs-lunr-ui-bundle.zip
 output:
   dir: ./public
+extensions:
+  - path: "@djencks/antora-lunr"
