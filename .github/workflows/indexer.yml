@@ -3,6 +3,10 @@ on:
   schedule:
   - cron: '30 4 * * *'
   workflow_dispatch:
+    inputs:
+      force:
+        description: 'Enter true to force the indexer to run'
+        required: false
 jobs:
   activate:
     runs-on: ubuntu-latest
@@ -30,7 +34,7 @@ jobs:
         STALENESS_THRESHOLD=172800000
         SITE_LAST_MODIFIED=$(curl -s $SITEMAP_URL | awk '/<lastmod>/{gsub(/<\/?lastmod>/,"");print;exit}' | node -p "Date.parse(require('fs').readFileSync(0).toString().trim()) - $STALENESS_THRESHOLD")
         SITE_LAST_INDEXED=$(curl -s -H X-Algolia-Application-Id:$APPLICATION_ID -H X-Algolia-API-Key:$API_KEY https://$APPLICATION_ID-dsn.algolia.net/1/indexes | node -p "Date.parse(JSON.parse(require('fs').readFileSync(0).toString()).items.find((it) => it.name == '$INDEX_NAME').updatedAt)")
-        if [ $SITE_LAST_MODIFIED -gt $SITE_LAST_INDEXED ]; then
+        if [ "${{ github.event.inputs.force }}" -eq "true" ] || [ $SITE_LAST_MODIFIED -gt $SITE_LAST_INDEXED ]; then
           export HOME=/root
           export INDEX_NAME_TMP=$INDEX_NAME_tmp-$GITHUB_RUN_ID
           cd $HOME
