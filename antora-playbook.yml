@@ -18,8 +18,12 @@ content:
   - url: https://github.com/asciidoctor/asciidoc-docs
     branches: main
     start_path: docs
-  - url: https://github.com/asciidoctor/asciidoctor
-    branches: master
+#  - url: https://github.com/asciidoctor/asciidoctor
+#    branches: master
+  - url: https://github.com/djencks/asciidoctor
+    branches: one-page
+#  - url: ./../asciidoctor
+#    branches: HEAD
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor.js
     branches: v2.2.x
@@ -60,6 +64,7 @@ asciidoc:
   extensions:
   - ./lib/global-table-attributes-tree-processor.js
   - ./lib/collapsible-block-tree-processor.js
+  - '@djencks/asciidoctor-ainclude'
 ui:
   bundle:
     url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-222/ui-bundle.zip

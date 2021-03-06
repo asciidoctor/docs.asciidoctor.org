@@ -36,9 +36,10 @@ ALGOLIA_IDX_NAME = "asciidoctor-docs"
 
 [context.deploy-preview]
 command = """\
-node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml && \
 node_modules/.bin/antora --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml\
 """
+# there are bugs...
+# node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml && \
 
 [[plugins]]
 package = "netlify-plugin-checklinks"
