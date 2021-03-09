@@ -27,6 +27,9 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-cli.js
     branches: master
     start_path: docs
+  - url: https://github.com/asciidoctor/asciidoctor-epub3
+    branches: master
+    start_path: docs
   - url: https://github.com/asciidoctor/asciidoctorj
     branches: master
     start_path: docs
@@ -44,7 +47,7 @@ content:
     start_path: docs
 asciidoc:
   attributes:
-    page-component-order: '!home, *, asciidoclet, reveal.js-converter, diagram-extension, about'
+    page-component-order: '!home, *, asciidoclet, reveal.js-converter, epub3-converter, diagram-extension, about'
     page-pagination: ''
     experimental: ''
     idprefix: '@'
