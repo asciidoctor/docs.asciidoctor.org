@@ -86,6 +86,17 @@
           "latest"
         ]
       }
+    },
+    {
+      "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/",
+      "variables": {
+        "component": [
+          "epub3-converter"
+        ],
+        "version": [
+          "latest"
+        ]
+      }
     }
   ],
   "sitemap_urls": [
