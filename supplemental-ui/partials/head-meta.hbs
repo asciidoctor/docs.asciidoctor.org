@@ -1,0 +1,12 @@
+    <meta name="docsearch:component_title" content="{{{page.component.title}}}">
+    {{#if (or (eq page.version 'master') (eq page.version 'latest'))}}
+    {{#with page.component}}
+    <meta name="docsearch:component_version" content='["{{{./name}}}","{{{./name}}}@latest"]'>
+    {{/with}}
+    {{else}}
+    {{#with page.componentVersion}}
+    <meta name="docsearch:component_version" content='["{{{./name}}}@{{{./version}}}"{{#if (eq this @root.page.component.latest)}},"{{{./name}}}@latest"{{/if}}]'>
+    <meta name="docsearch:display_version" content='"{{{./displayVersion}}}"'>
+    <meta name="docsearch:version" content='{{{./version}}}'>
+    {{/with}}
+    {{/if}}

@@ -66,5 +66,6 @@ asciidoc:
 ui:
   bundle:
     url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-238/ui-bundle.zip
+  supplemental_files: ./supplemental-ui
 output:
   dir: ./public
