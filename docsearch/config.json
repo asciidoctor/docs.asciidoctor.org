@@ -131,6 +131,7 @@
   "selectors_exclude": [],
   "min_indexed_level": 1,
   "custom_settings": {
+    "advancedSyntax": true,
     "attributesForFaceting": [
       "component",
       "version"
