@@ -144,6 +144,9 @@
       "component",
       "version"
     ],
+    "attributesToSnippet": [
+      "content:25"
+    ],
     "customRanking": [
       "desc(weight.page_rank)",
       "desc(version)",
