@@ -31,7 +31,7 @@ content:
     branches: master
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-maven-plugin
-    branches: master
+    branches: main
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoclet
     branches: master
