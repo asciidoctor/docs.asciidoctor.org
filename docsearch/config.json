@@ -11,6 +11,18 @@
       "selectors_key": "versionless"
     },
     {
+      "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/whats-new/",
+      "selectors_key": "multipart",
+      "variables": {
+        "component": [
+          "asciidoctor"
+        ],
+        "version": [
+          "latest"
+        ]
+      }
+    },
+    {
       "url": "https://docs.asciidoctor.org/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
@@ -114,6 +126,17 @@
       "lvl2": ".doc .sect1 > h2:first-child, .doc > h1.sect0",
       "lvl3": ".doc .sect2 > h3:first-child",
       "lvl4": ".doc .sect3 > h4:first-child",
+      "text": ".doc p, .doc dt, .doc td.context, .doc th.tableblock"
+    },
+    "multipart": {
+      "lvl0": {
+        "global": true,
+        "selector": ".nav-panel-explore .context .title, .nav-panel-explore .context .version"
+      },
+      "lvl1": ".doc > h1.page",
+      "lvl2": ".doc > h1.sect0",
+      "lvl3": ".doc .sect1 > h2:first-child",
+      "lvl4": ".doc .sect2 > h3:first-child",
       "text": ".doc p, .doc dt, .doc td.context, .doc th.tableblock"
     },
     "versionless": {
