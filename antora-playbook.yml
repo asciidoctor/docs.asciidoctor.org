@@ -28,7 +28,7 @@ content:
     branches: master
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctorj
-    branches: master
+    branches: main
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-maven-plugin
     branches: main
@@ -37,7 +37,7 @@ content:
     branches: master
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-epub3
-    branches: master
+    branches: main
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
     branches: maint-4.1.x
