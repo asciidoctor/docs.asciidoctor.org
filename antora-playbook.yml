@@ -28,7 +28,7 @@ content:
     branches: master
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctorj
-    branches: main
+    branches: v2.4.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-maven-plugin
     branches: main
