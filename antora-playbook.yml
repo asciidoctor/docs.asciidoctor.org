@@ -25,7 +25,7 @@ content:
     branches: v2.2.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-cli.js
-    branches: master
+    branches: main
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctorj
     branches: main, v2.4.x
