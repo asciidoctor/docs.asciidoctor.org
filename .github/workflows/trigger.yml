@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
 jobs:
   build:
+    if: github.repository_owner == 'asciidoctor'
     runs-on: ubuntu-latest
-    if: github.event_name != 'schedule' || github.repository == 'asciidoctor/docs.asciidoctor.org'
     steps:
     - name: Ping Netlify Webhook
       run: |

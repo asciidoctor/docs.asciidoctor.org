@@ -4,8 +4,10 @@ on:
     types: [created]
 jobs:
   pr-comment:
+    if: |
+      github.repository_owner == 'asciidoctor' && github.event.issue.pull_request &&
+      github.event.issue.user.id == github.event.comment.user.id && github.event.comment.body == '/retry'
     runs-on: ubuntu-latest
-    if: github.event.issue.pull_request && github.event.issue.user.id == github.event.comment.user.id && github.event.comment.body == '/retry'
     steps:
     - name: Retry Deploy Preview
       # see https://github.com/mojavelinux/retry-netlify-deploy-preview-action
