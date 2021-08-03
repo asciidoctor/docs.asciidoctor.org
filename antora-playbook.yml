@@ -19,7 +19,7 @@ content:
     branches: main
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor
-    branches: master
+    branches: v2.0.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor.js
     branches: v2.2.x
