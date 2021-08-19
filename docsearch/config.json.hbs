@@ -2,6 +2,17 @@
   "index_name": "asciidoctor-docs",
   "start_urls": [
     {{#each components}}
+    {{#if (eq ./name 'asciidoctor')}}
+    {
+      "url": "https://docs.asciidoctor.org/{{{./name}}}/latest/whats-new/",
+      "selectors_key": "multipart",
+      "extra_attributes": {
+        "component": "{{{./name}}}",
+        "version": "{{{./latest.version}}}",
+        "version_rank": 2
+      }
+    },
+    {{/if}}
     {
       "url": "https://docs.asciidoctor.org/{{{./name}}}/latest/",
       "extra_attributes": {
@@ -16,17 +27,6 @@
       {{else}}
       }
       {{/if}}
-    {{#if (eq ./name 'asciidoctor')}}
-    },
-    {
-      "url": "https://docs.asciidoctor.org/{{{./name}}}/latest/whats-new/",
-      "selectors_key": "multipart",
-      "extra_attributes": {
-        "component": "{{{./name}}}",
-        "version": "{{{./latest.version}}}",
-        "version_rank": 2
-      }
-    {{/if}}
     }{{#unless @last}},{{/unless}}
     {{/each}}
   ],
