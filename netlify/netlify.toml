@@ -24,7 +24,7 @@ compress = true
 [context.production]
 command = """\
 node_modules/.bin/antora --fetch --generator=@antora/xref-validator ../antora-playbook.yml && \
-node_modules/.bin/antora --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public ../antora-playbook.yml && \
+node_modules/.bin/antora --extension=./docsearch/publish-config-extension.js --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public ../antora-playbook.yml && \
 cp -a public/_/img/favicon.ico public/ && \
 sed -i 's;url([.][.]/;url(/_/;g' public/_/css/site.css\
 """
