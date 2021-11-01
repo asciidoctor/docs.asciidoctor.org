@@ -15,7 +15,7 @@ module.exports.register = (pipeline) => {
   ).create()
   handlebars.registerHelper('eq', (a, b) => a === b)
 
-  pipeline.on('beforePublish', async ({ contentCatalog, siteCatalog }) => {
+  pipeline.on('beforePublish', async ({ playbook, contentCatalog, siteCatalog }) => {
     const configFile = ospath.join(__dirname, 'config.json')
     const templateSrc = await fsp.readFile(configFile + '.hbs', 'utf8')
     const template = handlebars.compile(templateSrc, { noEscape: true, preventIndent: true, srcName: 'config.json.hbs' })
@@ -23,7 +23,7 @@ module.exports.register = (pipeline) => {
     const stopPages = contentCatalog.getPages((page) => {
       return page.out && ('page-archived' in page.asciidoc.attributes || 'page-noindex' in page.asciidoc.attributes)
     })
-    const config = template({ components, stopPages })
+    const config = template({ components, site: playbook.site, stopPages })
     siteCatalog.addFile({ contents: Buffer.from(config), out: { path: 'docsearch-config.json' } })
   })
 }

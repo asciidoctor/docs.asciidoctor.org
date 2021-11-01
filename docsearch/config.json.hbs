@@ -4,7 +4,7 @@
     {{#each components}}
     {{#if (eq ./name 'asciidoctor')}}
     {
-      "url": "https://docs.asciidoctor.org/{{{./name}}}/latest/whats-new/",
+      "url": "{{{@root.site.url}}}/{{{./name}}}/latest/whats-new/",
       "selectors_key": "multipart",
       "extra_attributes": {
         "component": "{{{./name}}}",
@@ -14,7 +14,7 @@
     },
     {{/if}}
     {
-      "url": "https://docs.asciidoctor.org/{{{./name}}}/latest/",
+      "url": "{{{@root.site.url}}}/{{{./name}}}/latest/",
       "extra_attributes": {
         "component": "{{{./name}}}",
         {{#unless (eq ./latest.version 'latest')}}
@@ -31,12 +31,12 @@
     {{/each}}
   ],
   "sitemap_urls": [
-    "https://docs.asciidoctor.org/sitemap.xml"
+    "{{{site.url}}}/sitemap.xml"
   ],
   "scrape_start_urls": true,
   "stop_urls": [
     {{#each stopPages}}
-    "https://docs.asciidoctor.org{{{./pub.url}}}"{{#unless @last}},{{/unless}}
+    "{{{@root.site.url}}}{{{./pub.url}}}"{{#unless @last}},{{/unless}}
     {{/each}}
   ],
   "selectors": {
