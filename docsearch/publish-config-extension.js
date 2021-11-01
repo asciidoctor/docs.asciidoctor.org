@@ -20,7 +20,10 @@ module.exports.register = (pipeline) => {
     const templateSrc = await fsp.readFile(configFile + '.hbs', 'utf8')
     const template = handlebars.compile(templateSrc, { noEscape: true, preventIndent: true, srcName: 'config.json.hbs' })
     const components = contentCatalog.getComponentsSortedBy('name').filter((component) => component.latest.version)
-    const config = template({ components })
+    const stopPages = contentCatalog.getPages((page) => {
+      return page.out && ('page-archived' in page.asciidoc.attributes || 'page-noindex' in page.asciidoc.attributes)
+    })
+    const config = template({ components, stopPages })
     siteCatalog.addFile({ contents: Buffer.from(config), out: { path: 'docsearch-config.json' } })
   })
 }
