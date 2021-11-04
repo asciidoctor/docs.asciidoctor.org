@@ -7,7 +7,7 @@ const ospath = require('path')
  * An Antora extension that generates the docsearch config file from a Handlebars template and publishes it with the
  * site, where the scraper job can retrieve it.
  */
-module.exports.register = () => {
+module.exports.register = function () {
   const handlebars = require(
     require.resolve('handlebars', {
       paths: [ospath.dirname(require.resolve('@antora/page-composer', { paths: this.module.paths }))]
