@@ -1,6 +1,7 @@
 runtime:
   cache_dir: ./.cache/antora
   log:
+    format: pretty
     failure_level: warn
 site:
   title: Asciidoctor Docs
@@ -10,8 +11,8 @@ site:
 git:
   ensure_git_suffix: false
 urls:
-  latest_version_segment_strategy: redirect:to
   latest_version_segment: latest
+  latest_version_segment_strategy: redirect:to
 content:
   sources:
   - url: https://github.com/asciidoctor/asciidoctor-community-docs
