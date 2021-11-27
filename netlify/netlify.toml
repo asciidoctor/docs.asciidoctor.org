@@ -43,7 +43,7 @@ package = "netlify-plugin-checklinks"
 entryPoints = ["**/*.html"]
 recursive = true
 pretty = true
-skipPatterns = ["load public/index.html", " href=\"file://"]
+skipPatterns = [" href=\"file://"]
 todoPatterns = []
 checkExternal = false
 followSourceMaps = false

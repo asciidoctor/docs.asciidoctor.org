@@ -6,7 +6,7 @@ runtime:
 site:
   title: Asciidoctor Docs
   url: https://docs.asciidoctor.org
-  start_page: home::index.adoc
+  start_page: ROOT::index.adoc
   robots: allow
 git:
   ensure_git_suffix: false
