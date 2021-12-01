@@ -1,7 +1,6 @@
 runtime:
   cache_dir: ./.cache/antora
   log:
-    format: pretty
     failure_level: warn
 site:
   title: Asciidoctor Docs

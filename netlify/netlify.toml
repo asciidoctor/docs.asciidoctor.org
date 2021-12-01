@@ -3,7 +3,6 @@ publish = "public"
 ignore = "false"
 
 [build.environment]
-CI = "true"
 NODE_VERSION = "16"
 NPM_FLAGS = "--no-optional"
 # or use low-level NPM_CONFIG_ flag
