@@ -1,3 +1,6 @@
+antora:
+  extensions:
+  - ./ext/asciidoctor-compliance-settings.js
 runtime:
   cache_dir: ./.cache/antora
   log:
