@@ -3,7 +3,6 @@
   "description": "Asciidoctor Docs (Production and Deploy Previews)",
   "private": true,
   "devDependencies": {
-    "@antora/cli": "3.0.0-rc.1",
-    "@antora/site-generator": "3.0.0-rc.1"
+    "antora": "3.0.0-rc.2"
   }
 }
