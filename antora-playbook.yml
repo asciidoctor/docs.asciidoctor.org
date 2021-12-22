@@ -63,8 +63,8 @@ asciidoc:
     example-caption: false
     listing-caption: false
     hide-uri-scheme: '@'
-    url-project: https://asciidoctor.org
     url-org: https://github.com/asciidoctor
+    url-project: https://asciidoctor.org
 ui:
   bundle:
     url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-268/ui-bundle.zip
