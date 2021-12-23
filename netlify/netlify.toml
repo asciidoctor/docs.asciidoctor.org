@@ -22,7 +22,7 @@ compress = true
 
 [context.production]
 command = """\
-node_modules/.bin/antora --extension=./docsearch/publish-config-extension.js --extension=./ext/root-relativize-css-urls.js --fetch --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public ../antora-playbook.yml
+node_modules/.bin/antora --extension=./docsearch/publish-config-extension.js --fetch --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public ../antora-playbook.yml
 """
 
 [context.production.environment]
