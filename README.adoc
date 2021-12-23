@@ -46,8 +46,7 @@ Navigate to [.path]_public/index.html_ in your browser to view the site offline.
 
 This section provides instructions for how to upgrade Antora used in the Netlify CI build.
 
-. Set the version of the Antora packages `@antora/cli` and `@antora/site-generator-default` in [.path]_netlify/package.json_.
-Both packages should be set to the same version.
+. Set the version of the meta Antora package `antora` in [.path]_netlify/package.json_.
 The version should be an exact number so we have control over exactly when it gets upgraded.
 
 . Switch to the netlify directory and run the following command to update [.path]_package-lock.json_:
