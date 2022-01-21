@@ -4,5 +4,10 @@
   "private": true,
   "devDependencies": {
     "antora": "3.0.0"
+  },
+  "overrides": {
+    "vinyl-fs": {
+      "glob-stream": "~7.0"
+    }
   }
 }
