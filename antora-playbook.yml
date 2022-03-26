@@ -68,6 +68,6 @@ asciidoc:
     url-project: https://asciidoctor.org
 ui:
   bundle:
-    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-277/ui-bundle.zip
+    url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-278/ui-bundle.zip
 output:
   dir: ./public
