@@ -29,9 +29,12 @@ npx antora --extension=./docsearch/publish-config-extension.js --fetch --html-ur
 ALGOLIA_IDX_NAME = "asciidoctor-docs"
 
 [context.deploy-preview]
+# checklinks doesn't understand the DEPLOY_PRIME_URL, so drop it for now
+#command = """\
+#npx antora --fetch --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml
+#"""
 command = """\
-sed -i 's/canonicalRoot,/canonicalRoot: process.env.DEPLOY_PRIME_URL,/' .netlify/plugins/node_modules/netlify-plugin-checklinks/lib/index.js && \
-npx antora --fetch --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml
+npx antora --fetch --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public ../antora-playbook.yml
 """
 
 [[plugins]]
