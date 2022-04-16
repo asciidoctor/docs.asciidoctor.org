@@ -30,6 +30,7 @@ ALGOLIA_IDX_NAME = "asciidoctor-docs"
 
 [context.deploy-preview]
 command = """\
+sed -i 's/canonicalRoot,/canonicalRoot: process.env.DEPLOY_PRIME_URL,/' .netlify/plugins/node_modules/netlify-plugin-checklinks/lib/index.js && \
 npx antora --fetch --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml
 """
 
