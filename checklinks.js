@@ -4,7 +4,7 @@
  *
  * Install:
  *
- *  $ npm i -g netlify-plugin-checklinks @ianra/toml
+ *  $ npm i -g netlify-plugin-checklinks @iarna/toml
  *
  * Run:
  * 
