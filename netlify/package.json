@@ -3,7 +3,8 @@
   "description": "Asciidoctor Docs (Production and Deploy Previews)",
   "private": true,
   "devDependencies": {
-    "antora": "3.0.0"
+    "antora": "3.0.0",
+    "netlify-plugin-checklinks": "git+https://github.com/mojavelinux/netlify-plugin-checklinks.git#patched"
   },
   "overrides": {
     "vinyl-fs": {
