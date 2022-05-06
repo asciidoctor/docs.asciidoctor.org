@@ -45,6 +45,9 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-epub3
     branches: main
     start_path: docs
+  - url: https://github.com/asciidoctor/asciidoctor-pdf
+    branches: main
+    start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
     branches: maint-4.1.x
     start_path: docs
@@ -53,7 +56,7 @@ content:
     start_path: docs
 asciidoc:
   attributes:
-    page-component-order: '!home, !ROOT, *, asciidoclet, reveal.js-converter, epub3-converter, diagram-extension, about'
+    page-component-order: '!home, !ROOT, *, asciidoclet, reveal.js-converter, pdf-converter, epub3-converter, diagram-extension, about'
     page-pagination: ''
     experimental: ''
     idprefix: '@'
