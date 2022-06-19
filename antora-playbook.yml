@@ -46,7 +46,7 @@ content:
     branches: main
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-pdf
-    branches: [main, v2.0.x]
+    branches: v2.1.x, v2.0.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
     branches: maint-4.1.x
