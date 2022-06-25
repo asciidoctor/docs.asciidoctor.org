@@ -14,6 +14,7 @@ module.exports.register = function () {
     })
   ).create()
   handlebars.registerHelper('eq', (a, b) => a === b)
+  handlebars.registerHelper('or', (a, b) => a || b)
 
   this.on('beforePublish', async ({ playbook, contentCatalog, siteCatalog }) => {
     const configFile = ospath.join(__dirname, 'config.json')
