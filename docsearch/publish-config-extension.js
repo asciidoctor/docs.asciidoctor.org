@@ -8,11 +8,7 @@ const ospath = require('path')
  * site, where the scraper job can retrieve it.
  */
 module.exports.register = function () {
-  const handlebars = require(
-    require.resolve('handlebars', {
-      paths: [ospath.dirname(require.resolve('@antora/page-composer', { paths: this.module.paths }))]
-    })
-  ).create()
+  const handlebars = this.require('handlebars').create()
   handlebars.registerHelper('eq', (a, b) => a === b)
   handlebars.registerHelper('or', (a, b) => a || b)
 
