@@ -4,7 +4,7 @@ ignore = "false"
 
 [build.environment]
 NODE_VERSION = "16"
-NPM_FLAGS = "--omit=optional"
+NPM_FLAGS = "--lockfile-version=3 --omit=optional"
 ANTORA_CACHE_DIR = "~+/node_modules/.cache/antora"
 ALGOLIA_IDX_NAME = "asciidoctor-docs-replica"
 
