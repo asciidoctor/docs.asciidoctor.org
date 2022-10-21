@@ -2,6 +2,7 @@ antora:
   extensions:
   - ./ext/asciidoctor-compliance-settings.js
   - ./ext/promote-favicon-to-root.js
+  - ./ext/page-location.js
 runtime:
   cache_dir: ./.cache/antora
   log:
