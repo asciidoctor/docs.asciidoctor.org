@@ -1,7 +1,7 @@
 'use strict'
 
-const { promises: fsp } = require('fs')
-const ospath = require('path')
+const fsp = require('node:fs/promises')
+const ospath = require('node:path')
 
 /**
  * An Antora extension that generates the docsearch config file from a Handlebars template and publishes it with the
