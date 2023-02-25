@@ -22,9 +22,10 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-community-docs
     branches: main
     start_paths: about, home
-  - url: https://github.com/asciidoctor/asciidoc-docs
+  - url: https://gitlab.eclipse.org/eclipse/asciidoc-lang/asciidoc-lang.git
     branches: main
     start_path: docs
+    edit_url: '{web_url}/-/edit/{refname}/{path}'
   - url: https://github.com/asciidoctor/asciidoctor
     branches: v2.0.x
     start_path: docs
