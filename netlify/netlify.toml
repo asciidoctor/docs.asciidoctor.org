@@ -3,6 +3,7 @@ publish = "public"
 ignore = "false"
 
 [build.environment]
+# Node.js 16 is the version provided by the build image: https://docs.netlify.com/configure-builds/available-software-at-build-time/
 NODE_VERSION = "16"
 NPM_FLAGS = "--lockfile-version=3 --omit=optional"
 ANTORA_CACHE_DIR = "~+/node_modules/.cache/antora"
