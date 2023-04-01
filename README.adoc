@@ -32,14 +32,18 @@ The UI for the site is hosted in a separate repository, {url-docs-ui}[asciidocto
 == Quickstart
 
 To generate the Asciidoctor Docs site, you first need to install {url-antora}[Antora].
-Follow the {url-antora-install}[installation instructions] in the Antora documentation.
-We recommend installing it globally, if possible.
+We recommend installing and running the `antora` command on the playbook file hosted in this repository using `npx`.
+npx installs Antora the *antora* package globally into an isolated directory, then runs the corresponding `antora` command.
 
-Once Antora is installed, run the `antora` command on the playbook file hosted in this repository.
+ $ npx antora antora-playbook.yml
+
+If you prefer, you can install Antora globally.
+To learn how, refer to the {url-antora-install}[installation instructions] in the Antora documentation.
+You can then run the `antora` command directly on the playbook file hosted in this repository.
 
  $ antora antora-playbook.yml
 
-This command will generate a site into [.path]_public/_.
+The command will generate a site into [.path]_public/_.
 Navigate to [.path]_public/index.html_ in your browser to view the site offline.
 
 == How to Upgrade Antora in CI
