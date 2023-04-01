@@ -23,7 +23,7 @@
         "version": "{{{./latest.version}}}",
         {{/unless}}
         "version_rank": {{#if (eq ./latest.version 'latest')}}1{{else}}2{{/if}}
-      {{#if (eq ./version.latest 'latest')}}
+      {{#if (eq ./latest.version 'latest')}}
       },
       "selectors_key": "versionless"
       {{else}}
