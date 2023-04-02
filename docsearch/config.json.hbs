@@ -19,11 +19,11 @@
       "url": "{{{@root.site.url}}}/{{{./name}}}/latest/",
       "extra_attributes": {
         "component": "{{{./name}}}",
-        {{#unless (eq ./latest.version 'latest')}}
+        {{#unless (eq ./latest.version 'pre-spec')}}
         "version": "{{{./latest.version}}}",
         {{/unless}}
-        "version_rank": {{#if (eq ./latest.version 'latest')}}1{{else}}2{{/if}}
-      {{#if (eq ./latest.version 'latest')}}
+        "version_rank": {{#if (eq ./latest.version 'pre-spec')}}1{{else}}2{{/if}}
+      {{#if (eq ./latest.version 'pre-spec')}}
       },
       "selectors_key": "versionless"
       {{else}}
