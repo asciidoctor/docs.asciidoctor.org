@@ -3,7 +3,7 @@
   "description": "Asciidoctor Docs (Production and Deploy Previews)",
   "private": true,
   "devDependencies": {
-    "antora": "3.1.2",
+    "antora": "3.1.4",
     "netlify-plugin-checklinks": "git+https://github.com/mojavelinux/netlify-plugin-checklinks.git#patched"
   },
   "overrides": {
