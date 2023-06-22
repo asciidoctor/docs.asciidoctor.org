@@ -63,3 +63,9 @@ from = "/asciidoctor.js"
 to = "/asciidoctor.js/latest/"
 status = 301
 force = true
+
+[[redirects]]
+from = "/asciidoctorj/2.4/*"
+to = "/asciidoctorj/latest/"
+status = 301
+force = true
