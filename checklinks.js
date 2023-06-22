@@ -16,7 +16,9 @@ const { promises: fsp } = require('fs')
 
 ;(async () => {
   const netlifyConfig = toml.parse(await fsp.readFile('netlify/netlify.toml', 'utf8'))
-  const config = netlifyConfig.plugins.find((it) => it.package === 'netlify-plugin-checklinks')
+  const config = netlifyConfig.plugins.find((it) =>
+    it.package === 'netlify-plugin-checklinks' || it.package?.endsWith('/netlify-plugin-checklinks')
+  )
   if (!config) {
     console.warn('Could not locate checklinks configuration. Aborting')
     return
