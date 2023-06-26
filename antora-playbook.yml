@@ -38,26 +38,26 @@ content:
   - url: https://github.com/asciidoctor/asciidoctorj
     branches: main, v2.5.x
     start_path: docs
+  - url: https://github.com/asciidoctor/asciidoctor-browser-extension
+    branches: main
+    start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-maven-plugin
     branches: v2.2.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoclet
     branches: master
     start_path: docs
-  - url: https://github.com/asciidoctor/asciidoctor-epub3
-    branches: main
+  - url: https://github.com/asciidoctor/asciidoctor-reveal.js
+    branches: 5.0.x, maint-4.1.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-pdf
     branches: v2.3.x, v2.2.x, v2.1.x, v2.0.x
     start_path: docs
-  - url: https://github.com/asciidoctor/asciidoctor-reveal.js
-    branches: 5.0.x, maint-4.1.x
+  - url: https://github.com/asciidoctor/asciidoctor-epub3
+    branches: main
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-diagram
     branches: release
-    start_path: docs
-  - url: https://github.com/asciidoctor/asciidoctor-browser-extension
-    branches: main
     start_path: docs
 asciidoc:
   attributes:
