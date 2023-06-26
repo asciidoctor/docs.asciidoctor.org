@@ -56,6 +56,9 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-diagram
     branches: release
     start_path: docs
+  - url: https://github.com/asciidoctor/asciidoctor-browser-extension
+    branches: main
+    start_path: docs
 asciidoc:
   attributes:
     page-component-order: '!home, !ROOT, *, asciidoclet, reveal.js-converter, pdf-converter, epub3-converter, diagram-extension, about'
