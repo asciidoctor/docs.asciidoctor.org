@@ -30,7 +30,7 @@ content:
     branches: v2.0.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor.js
-    branches: v2.2.x
+    branches: 3.0.x, v2.2.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-cli.js
     branches: main
