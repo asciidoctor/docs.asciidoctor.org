@@ -57,7 +57,7 @@ content:
     branches: release
     start_path: docs
   - url: https://github.com/sturtison/asciidoctor-browser-extension
-    branches: docs/issue-648-refresh-docs-draft
+    branches: main
     start_path: docs
 asciidoc:
   attributes:
