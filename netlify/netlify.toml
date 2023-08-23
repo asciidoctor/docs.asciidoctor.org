@@ -59,6 +59,12 @@ status = 301
 force = true
 
 [[redirects]]
+from = "/browser-extension/latest/"
+to = "/browser-extension/"
+status = 301
+force = true
+
+[[redirects]]
 from = "/asciidoctor.js"
 to = "/asciidoctor.js/latest/"
 status = 301
