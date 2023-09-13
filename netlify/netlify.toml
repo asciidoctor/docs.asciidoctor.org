@@ -17,7 +17,8 @@ skip_processing = false
 pretty_urls = true
 
 [build.processing.images]
-compress = true
+# NOTE this feature reached EOL on Oct 17, 2023
+compress = false
 
 [context.production]
 command = """\
