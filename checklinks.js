@@ -1,10 +1,11 @@
 /**
  * Runs the checklinks plugin used by the Netlify build.
  * The script reads the configuration for checklinks from netlify/netlify.toml.
+ * The location of the publish directory can be passed as the first argument.
  *
  * Install:
  *
- *  $ npm i -g netlify-plugin-checklinks @iarna/toml
+ *  $ npm i -g https://github.com/mojavelinux/netlify-plugin-checklinks.git#patched @iarna/toml
  *
  * Run:
  * 
@@ -12,7 +13,7 @@
  */
 const { onPostBuild: checklinks } = require('netlify-plugin-checklinks')
 const toml = require('@iarna/toml')
-const { promises: fsp } = require('fs')
+const fsp = require('node:fs/promises')
 
 ;(async () => {
   const netlifyConfig = toml.parse(await fsp.readFile('netlify/netlify.toml', 'utf8'))
