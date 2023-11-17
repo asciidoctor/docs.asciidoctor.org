@@ -77,5 +77,6 @@ asciidoc:
 ui:
   bundle:
     url: https://github.com/asciidoctor/docs.asciidoctor.org-ui/releases/download/prod-latest/ui-bundle.zip
+    snapshot: true # must be set since the prod-latest tag is an alias
 output:
   dir: ./public
