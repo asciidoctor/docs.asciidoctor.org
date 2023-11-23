@@ -16,14 +16,20 @@
     {{/each}}
     {{/if}}
     {
+      {{#if ./latest.version}}
       "url": "{{{@root.site.url}}}/{{{./name}}}/latest/",
+      {{else}}
+      "url": "{{{@root.site.url}}}/{{{./name}}}/",
+      {{/if}}
       "extra_attributes": {
         "component": "{{{./name}}}",
+        {{#if ./latest.version}}
         {{#unless (eq ./latest.version 'pre-spec')}}
         "version": "{{{./latest.version}}}",
         {{/unless}}
+        {{/if}}
         "version_rank": {{#if (eq ./latest.version 'pre-spec')}}1{{else}}2{{/if}}
-      {{#if (eq ./latest.version 'pre-spec')}}
+      {{#if (or (not ./latest.version) (eq ./latest.version 'pre-spec'))}}
       },
       "selectors_key": "versionless"
       {{else}}
