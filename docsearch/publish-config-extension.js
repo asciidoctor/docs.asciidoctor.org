@@ -16,7 +16,9 @@ module.exports.register = function () {
     const configFile = ospath.join(__dirname, 'config.json')
     const templateSrc = await fsp.readFile(configFile + '.hbs', 'utf8')
     const template = handlebars.compile(templateSrc, { noEscape: true, preventIndent: true, srcName: 'config.json.hbs' })
-    const components = contentCatalog.getComponentsSortedBy('name').filter((component) => component.latest.version)
+    const components = contentCatalog
+      .getComponentsSortedBy('name')
+      .filter((component) => component.name === 'about' || component.latest.version)
     const stopPages = contentCatalog.getPages((page) => {
       return page.out && ('page-archived' in page.asciidoc.attributes || 'page-noindex' in page.asciidoc.attributes)
     })
