@@ -41,7 +41,7 @@ package = "./node_modules/netlify-plugin-checklinks"
 entryPoints = ["**/*.html"]
 recursive = true
 pretty = true
-skipPatterns = [" href=\"file://", "/MathJax.js?config="]
+skipPatterns = [" href=\"file://", "/MathJax.js?config=", " https://gist.github.com/"]
 todoPatterns = []
 checkExternal = false
 followSourceMaps = false
