@@ -41,6 +41,9 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-browser-extension
     branches: main
     start_path: docs
+  - url: https://github.com/asciidoctor/asciidoctor-gradle-plugin
+    branches: master
+    start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-maven-plugin
     branches: main, v2.2.x
     start_path: docs
