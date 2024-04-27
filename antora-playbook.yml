@@ -48,7 +48,7 @@ content:
     branches: main, v2.2.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoclet
-    branches: v1.5.x
+    branches: main, v1.5.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
     branches: 5.0.x, maint-4.1.x
