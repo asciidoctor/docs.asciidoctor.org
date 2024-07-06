@@ -22,10 +22,8 @@ jobs:
     steps:
     - name: Checkout
       run: |
-        apt-get -qq update
-        apt-get -qq install -y git
-        echo git clone --depth 1 ${{ github.repositoryUrl }} ${{ github.workspace }}
-        git clone --depth 1 ${{ github.repositoryUrl }} ${{ github.workspace }}
+        wget https://github.com/${{ github.repository }}/archive/refs/heads/main.tar.gz
+        tar -C ${{ github.workspace }} --strip-components=1 -zxf $PWD/main.tar.gz
     - name: Index
       env:
         APPLICATION_ID: ${{ secrets.ALGOLIA_APP_ID }}
