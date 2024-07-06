@@ -31,9 +31,11 @@ jobs:
         API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
         CONFIG: ${{ github.workspace }}/docsearch/config.json
       run: |
+        echo $PWD
         curl -sL -o $CONFIG https://docs.asciidoctor.org/docsearch-config.json
         INDEX_NAME=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).index_name")
         SITEMAP_URL=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).sitemap_urls[0].replace('.xml', '-ROOT.xml')")
+        echo $SITEMAP_URL
         # only run indexer if index is more than 2 days out of date
         STALENESS_THRESHOLD=172800000
         SITE_LAST_MODIFIED=$(curl -s $SITEMAP_URL | awk '/<lastmod>/{gsub(/<\/?lastmod>/,"");print;exit}' | node -p "Date.parse(require('fs').readFileSync(0).toString().trim()) - $STALENESS_THRESHOLD")
@@ -42,7 +44,6 @@ jobs:
           export HOME=/root
           export INDEX_NAME_TMP="${INDEX_NAME}_${GITHUB_RUN_ID}"
           cd $HOME
-          echo got here
           pipenv run python -m src.index
         else
           echo 'SKIP: Index is already up to date.'
