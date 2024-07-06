@@ -31,9 +31,7 @@ jobs:
         API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
         CONFIG: ${{ github.workspace }}/docsearch/config.json
       run: |
-        node -v
-        curl -sL -o $CONFIG https://docs.asciidoctor.org/docsearch-config.json
-        cat $CONFIG
+        curl -L -o $CONFIG https://docs.asciidoctor.org/docsearch-config.json
         INDEX_NAME=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).index_name")
         SITEMAP_URL=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).sitemap_urls[0].replace('.xml', '-ROOT.xml')")
         # only run indexer if index is more than 2 days out of date
