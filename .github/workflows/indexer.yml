@@ -24,6 +24,7 @@ jobs:
       run: |
         apt-get -qq update
         apt-get -qq install -y git
+        echo git clone --depth 1 ${{ github.repositoryUrl }} ${{ github.workspace }}
         git clone --depth 1 ${{ github.repositoryUrl }} ${{ github.workspace }}
     - name: Index
       env:
