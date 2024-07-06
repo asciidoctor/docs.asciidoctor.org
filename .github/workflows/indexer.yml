@@ -42,6 +42,7 @@ jobs:
           export HOME=/root
           export INDEX_NAME_TMP="${INDEX_NAME}_${GITHUB_RUN_ID}"
           cd $HOME
+          echo got here
           pipenv run python -m src.index
         else
           echo 'SKIP: Index is already up to date.'
