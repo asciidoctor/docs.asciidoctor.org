@@ -21,7 +21,9 @@ jobs:
     container: algolia/docsearch-scraper:v1.12.0
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      run: |
+        apt-get install -y git
+        git clone --depth 1 ${{ github.repositoryUrl }} ${{ github.workspace }}
     - name: Index
       env:
         APPLICATION_ID: ${{ secrets.ALGOLIA_APP_ID }}
