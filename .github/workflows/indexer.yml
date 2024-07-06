@@ -19,21 +19,22 @@ jobs:
     needs: activate
     runs-on: ubuntu-latest
     container: algolia/docsearch-scraper:v1.12.0
+    env:
+      CONFIG: ${{ github.workspace }}/docsearch/config.json
+      REMOTE_CONFIG: https://docs.asciidoctor.org/docsearch-config.json
+      WORKSPACE: ${{ github.workspace }}
     steps:
     - name: Checkout
       run: |
         wget https://github.com/${{ github.repository }}/archive/refs/heads/main.tar.gz
-        mkdir -p ${{ github.workspace }}
-        tar -C ${{ github.workspace }} --strip-components=1 -zxf $PWD/main.tar.gz
-        echo ${{ github.workspace }}
-        ls ${{ github.workspace }}
+        mkdir -p $WORKSPACE
+        tar -C $WORKSPACE --strip-components=1 -zxf $PWD/main.tar.gz
     - name: Index
       env:
         APPLICATION_ID: ${{ secrets.ALGOLIA_APP_ID }}
         API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-        CONFIG: ${{ github.workspace }}/docsearch/config.json
       run: |
-        curl -L -o $CONFIG https://docs.asciidoctor.org/docsearch-config.json
+        curl -L -o $CONFIG $REMOTE_CONFIG
         INDEX_NAME=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).index_name")
         SITEMAP_URL=$(node -p "JSON.parse(require('fs').readFileSync('$CONFIG')).sitemap_urls[0].replace('.xml', '-ROOT.xml')")
         # only run indexer if index is more than 2 days out of date
