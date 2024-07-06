@@ -23,6 +23,7 @@ jobs:
     - name: Checkout
       run: |
         wget https://github.com/${{ github.repository }}/archive/refs/heads/main.tar.gz
+        mkdir -p ${{ github.workspace }}
         tar -C ${{ github.workspace }} --strip-components=1 -zxf $PWD/main.tar.gz
     - name: Index
       env:
