@@ -52,7 +52,7 @@ content:
     branches: main, v1.5.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
-    branches: 5.0.x, maint-4.1.x
+    branches: 5.2.x, maint-4.1.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-pdf
     branches: v2.3.x, v2.2.x, v2.1.x, v2.0.x
