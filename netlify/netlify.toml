@@ -76,3 +76,9 @@ from = "/asciidoctorj/2.4/*"
 to = "/asciidoctorj/latest/"
 status = 301
 force = true
+
+[[redirects]]
+from = "/maven-tools/2.2/*"
+to = "/maven-tools/latest/"
+status = 301
+force = true
