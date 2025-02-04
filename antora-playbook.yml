@@ -65,7 +65,7 @@ content:
     start_path: docs
 asciidoc:
   extensions:
-    - '@asciidoctor/tabs'
+  - '@asciidoctor/tabs'
   attributes:
     page-component-order: '!ROOT, *, pdf-converter, epub3-converter, reveal.js-converter, maven-tools, gradle-plugin, asciidoclet, diagram-extension, browser-extension, about'
     page-pagination: ''
