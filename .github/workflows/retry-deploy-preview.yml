@@ -6,7 +6,7 @@ jobs:
   pr-comment:
     if: |
       github.repository_owner == 'asciidoctor' && github.event.issue.pull_request &&
-      github.event.comment.body == '/retry'
+      github.event.issue.user.id == github.event.comment.user.id && github.event.comment.body == '/retry'
     runs-on: ubuntu-latest
     steps:
     - name: Retry Deploy Preview
