@@ -1,7 +1,11 @@
+'use strict'
+
 /**
  * Runs the checklinks plugin used by the Netlify build.
  * The script reads the configuration for checklinks from netlify/netlify.toml.
  * The location of the publish directory can be passed as the first argument.
+ * In order to make the script work locally, you must remove the og:url metadata
+ * from the HTML files.
  *
  * Install:
  *
