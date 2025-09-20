@@ -43,7 +43,7 @@ content:
     branches: main
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-gradle-plugin
-    branches: master
+    branches: master, development-5.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-maven-plugin
     branches: main
