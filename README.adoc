@@ -68,6 +68,20 @@ Otherwise, leave this file alone.
 
 Netlify will take it from there.
 
+== Deploy Preview
+
+If you submit an pull request to this repository, Netlify will prepare a preview deploy (aka deploy preview) of the site.
+The link to the deploy preview will be attached to the pull request.
+
+If you make changes to the content and want the preview site to be rebuild, add the following comment to the pull request:
+
+ /retry
+
+If you are the author of the pull request, this comment will trigger a rebuild of the site.
+
+One caveat is that if the initial deploy preview failed, GitHub will not update the status after that if the build succeeds (or fails again).
+That functionality still needs to be worked out.
+
 == Hosting
 
 This site is hosted on {url-netlify}[Netlify].
