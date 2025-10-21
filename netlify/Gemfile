@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+gem 'asciidoctor-pdf', '~> 2.3.0'
+gem 'hexapdf', '~> 1.4.0'
+gem 'rouge'
+gem 'text-hyphen'

@@ -1,0 +1,13 @@
+extends: default
+base:
+  hyphens: true
+# using auto takes 3x as long
+#heading:
+#  min-height-after: auto
+footer:
+  recto:
+    right:
+      content: '{section-or-chapter-title} | {page-number}'
+  verso:
+    left:
+      content: '{page-number} | {section-or-chapter-title}'
