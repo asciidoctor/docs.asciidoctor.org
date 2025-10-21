@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "@asciidoctor/tabs": "1.0.0-beta.6",
-    "antora": "3.1.14",
+    "antora": "3.2.0-alpha.10",
     "netlify-plugin-checklinks": "git+https://github.com/mojavelinux/netlify-plugin-checklinks.git#patched"
   },
   "overrides": {
