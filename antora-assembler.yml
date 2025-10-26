@@ -1,0 +1,27 @@
+component_version_filter:
+  names: [asciidoc]
+assembly:
+  root_level: 0
+  section_merge_strategy: fuse
+asciidoc:
+  attributes:
+    asciidoctor-log-integration: ''
+    preface-title: Preface
+    toclevels: 3
+    outlinelevels: 4
+build:
+  dir: ~+/build/assembler-pdf
+  cwd: ~+
+  command: >-
+    bundle exec asciidoctor-pdf
+    -a allow-uri-read
+    -a optimize
+    -a source-highlighter=rouge
+    -a toc
+    -r ../ext/pdf-extensions
+    --sourcemap
+    --theme ../ext/pdf-theme.yml
+    --trace
+  stderr: log
+  keep_source: true
+  qualify_exports: true

@@ -5,6 +5,7 @@ ignore = "false"
 [build.environment]
 # Node.js 22 is the version provided by the build image: https://docs.netlify.com/configure-builds/available-software-at-build-time/
 NODE_VERSION = "22"
+RUBY_VERSION = "3.4"
 NPM_FLAGS = "--lockfile-version=3 --omit=optional"
 ANTORA_CACHE_DIR = "~+/node_modules/.cache/antora"
 ALGOLIA_IDX_NAME = "asciidoctor-docs-replica"
@@ -22,7 +23,7 @@ compress = false
 
 [context.production]
 command = """\
-npx antora --extension=./docsearch/publish-config-extension.js --fetch --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public ../antora-playbook.yml
+npx antora --extension @antora/pdf-extension --extension ./docsearch/publish-config-extension.js --fetch --html-url-extension-style indexify --redirect-facility netlify --to-dir public ../antora-playbook.yml
 """
 
 [context.production.environment]
@@ -30,7 +31,7 @@ ALGOLIA_IDX_NAME = "asciidoctor-docs"
 
 [context.deploy-preview]
 command = """\
-npx antora --fetch --html-url-extension-style=indexify --redirect-facility=netlify --to-dir=public --url $DEPLOY_PRIME_URL ../antora-playbook.yml
+npx antora --extension @antora/pdf-extension --fetch --html-url-extension-style indexify --redirect-facility netlify --to-dir public --url $DEPLOY_PRIME_URL ../antora-playbook.yml
 """
 
 # checklinks doesn't understand the DEPLOY_PRIME_URL, so use our patched version
