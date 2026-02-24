@@ -3,7 +3,6 @@ component_version_filter:
 assembly:
   root_level: 0
   section_merge_strategy: fuse
-asciidoc:
   attributes:
     asciidoctor-log-integration: ''
     preface-title: Preface
