@@ -36,7 +36,7 @@ npx antora --extension @antora/pdf-extension --fetch --html-url-extension-style 
 
 # checklinks doesn't understand the DEPLOY_PRIME_URL, so use our patched version
 [[plugins]]
-package = "./node_modules/netlify-plugin-checklinks"
+package = "./checklinks/node_modules/netlify-plugin-checklinks"
 
 [plugins.inputs]
 entryPoints = ["**/*.html"]
