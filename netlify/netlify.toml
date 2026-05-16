@@ -9,6 +9,7 @@ RUBY_VERSION = "3.4"
 NPM_FLAGS = "--lockfile-version=3 --omit=optional"
 ANTORA_CACHE_DIR = "~+/node_modules/.cache/antora"
 ALGOLIA_IDX_NAME = "asciidoctor-docs-replica"
+READABLE_STREAM = "disabled"
 
 [build.processing]
 skip_processing = false
