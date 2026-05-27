@@ -63,11 +63,14 @@ content:
   - url: https://github.com/asciidoctor/asciidoctor-diagram
     branches: release
     start_path: docs
+  - url: https://github.com/asciidoctor/asciidoctor-kroki
+    branches: master
+    start_path: docs
 asciidoc:
   extensions:
   - '@asciidoctor/tabs'
   attributes:
-    page-component-order: '!ROOT, *, pdf-converter, epub3-converter, reveal.js-converter, maven-tools, gradle-plugin, asciidoclet, diagram-extension, browser-extension, about'
+    page-component-order: '!ROOT, *, pdf-converter, epub3-converter, reveal.js-converter, maven-tools, gradle-plugin, asciidoclet, diagram-extension, kroki-extension, browser-extension, about'
     page-pagination: ''
     experimental: ''
     idprefix: '@'
