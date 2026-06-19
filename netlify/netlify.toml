@@ -24,7 +24,7 @@ compress = false
 
 [context.production]
 command = """\
-npx antora --extension @antora/pdf-extension --extension ./docsearch/publish-config-extension.js --fetch --html-url-extension-style indexify --redirect-facility netlify --to-dir public ../antora-playbook.yml
+npx antora --extension @antora/pdf-extension --extension ./docsearch/publish-config-extension.js --fetch --html-url-extension-style indexify --redirect-facility netlify --to-dir public --stacktrace ../antora-playbook.yml
 """
 
 [context.production.environment]
@@ -32,7 +32,7 @@ ALGOLIA_IDX_NAME = "asciidoctor-docs"
 
 [context.deploy-preview]
 command = """\
-npx antora --extension @antora/pdf-extension --fetch --html-url-extension-style indexify --redirect-facility netlify --to-dir public --url $DEPLOY_PRIME_URL ../antora-playbook.yml
+npx antora --extension @antora/pdf-extension --fetch --html-url-extension-style indexify --redirect-facility netlify --to-dir public --url $DEPLOY_PRIME_URL --stacktrace ../antora-playbook.yml
 """
 
 # checklinks doesn't understand the DEPLOY_PRIME_URL, so use our patched version
