@@ -5,7 +5,7 @@ assembly:
   section_merge_strategy: fuse
   attributes:
     asciidoctor-log-integration: ''
-    preface-title: Preface
+    preface-title: Preface@
     toclevels: 3
     outlinelevels: 4
 build:
