@@ -8,7 +8,7 @@ module.exports.register = function () {
         const componentVersionId = { component: component.name, version: componentVersion.version }
         const componentVersionStartPage = contentCatalog.resolvePage('index.adoc', componentVersionId)
         if (!componentVersionStartPage) return
-        const { startPath, webUrl } = componentVersionStartPage.src.origin
+        const { startPath, webUrl } = componentVersionStartPage.src.origin || {}
         if (!(startPath === 'docs' && webUrl)) return
         if (componentVersion.asciidoc === siteAsciiDocConfig) {
           componentVersion.asciidoc = Object.assign(
