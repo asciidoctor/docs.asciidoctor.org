@@ -37,7 +37,7 @@ content:
     branches: main
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctorj
-    branches: main, v2.5.x
+    branches: main, v3.1.x, v2.5.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-browser-extension
     branches: main
