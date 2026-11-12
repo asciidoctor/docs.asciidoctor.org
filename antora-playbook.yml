@@ -31,13 +31,13 @@ content:
     branches: v2.0.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor.js
-    branches: main, 3.0.x, v2.2.x
+    branches: main, v4.0.x, 3.0.x, v2.2.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-cli.js
     branches: main
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctorj
-    branches: main, v2.5.x
+    branches: main, v3.1.x, v2.5.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-browser-extension
     branches: main
@@ -52,7 +52,7 @@ content:
     branches: main, v1.5.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-reveal.js
-    branches: 5.2.x, maint-4.1.x
+    branches: main, 5.2.x, maint-4.1.x
     start_path: docs
   - url: https://github.com/asciidoctor/asciidoctor-pdf
     branches: v2.3.x, v2.2.x, v2.1.x, v2.0.x
