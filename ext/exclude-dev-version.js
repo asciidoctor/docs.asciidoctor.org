@@ -12,7 +12,7 @@ module.exports.register = function () {
       if (prerelease && prerelease.constructor === String &&
           (prerelease.endsWith('-dev') || prerelease.endsWith('-alpha.0'))) {
         logger ??= this.getLogger('exclude-dev-version')
-        logger.debug(`Excluding component version bucket ${version}@${name} (prerelease: ${prerelease})`)
+        logger.info(`Excluding component version bucket ${version}@${name} (prerelease: ${prerelease})`)
         continue
       }
       newContentAggregate.push(componentVersionBucket)
